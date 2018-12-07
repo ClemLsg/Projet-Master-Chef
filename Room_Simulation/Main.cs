@@ -25,7 +25,7 @@ namespace Room_Simulation
             graphics.PreferredBackBufferWidth = 1600;
             graphics.PreferredBackBufferHeight = 800;
             this.IsMouseVisible = true;
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = true; // C'est degeux en fullscreen mdr, touchez pas a ca XD
 
             //POINTING Content to ressources folder
             Content.RootDirectory = "Content";
@@ -90,11 +90,13 @@ namespace Room_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            GraphicsDevice.Clear(Color.DarkGray);
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
             this.simulation.Draw(this.spriteBatch);
             base.Draw(gameTime);
+            spriteBatch.End();
         }
     }
 }

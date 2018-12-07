@@ -16,7 +16,7 @@ namespace Room_Simulation.Views.GameObjects
         private bool moving = false;
         private int goToX;
         private int goToY;
-        private int speed = 1;
+        private int speed = 50;
 
         //CONSTRUTOR
         protected GameObjectsBase(int x, int y, Sprite sprite)
@@ -34,7 +34,7 @@ namespace Room_Simulation.Views.GameObjects
         }
 
         //UPDATE & DRAW
-        public virtual void Update(UserInput userInput)
+        public virtual void Update(UserInput userInput, GameTime gameTime)
         {
             if (moving)
             {
@@ -44,7 +44,7 @@ namespace Room_Simulation.Views.GameObjects
                 if (hitbox.X == goToX && hitbox.Y == goToY)
                 {
                     moving = false;
-                    speed = 1;
+                    speed = 50;
                 }
             }
             this.sprite.Update(this.hitbox.X, this.hitbox.Y);

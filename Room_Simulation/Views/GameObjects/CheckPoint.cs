@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,14 @@ namespace Room_Simulation.Views.GameObjects
         public Checkpoint(int x, int y)
             : base(x, y, new Sprite("candle", 70, 64))
         {
-            
+           
         }
 
         //UPDATE & DRAW
 
-        public override void Update(UserInput userInput)
+        public override void Update(UserInput userInput, GameTime gameTime)
         {
-            base.Update(userInput);
+            base.Update(userInput, gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {

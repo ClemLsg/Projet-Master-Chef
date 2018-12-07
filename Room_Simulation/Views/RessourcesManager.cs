@@ -25,7 +25,7 @@ namespace Room_Simulation.Views
         public void LoadGraphics(ContentManager content)
         { 
             List<string> ClientsSprites = new List<string>() { "client1", "client2", "client3", "client4", "client5", "client6", "client7", "client8", "client9", "client10", "client11", "client12", "client13" };
-            List<string> FurnituresSprites = new List<string>() { "chairs", "exchange", "toilet" };
+            List<string> FurnituresSprites = new List<string>() { "chairs", "exchange", "toilet" , "candle" };
             List<string> TablesSprites = new List<string>() { "table10", "table8", "table6", "table4", "table2" };
             List<string> TexturesSprites = new List<string>() { "allwalls", "brickwall", "grass", "ground", "objects", "people", "walls", "woodfloor" };
             List<string> UserInterfacesSprites = new List<string>() { "logo" };

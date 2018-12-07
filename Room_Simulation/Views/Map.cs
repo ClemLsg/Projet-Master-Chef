@@ -13,43 +13,52 @@ namespace Room_Simulation.Views.GameObjects
         private List<Table> tables = new List<Table>();
         private Sprite exchange;
         private Sprite allWalls;
+        private List<Checkpoint> checkpoints = new List<Checkpoint>();
 
         //CONSTRUCTOR
         public Map()
         {
             allWalls = new Sprite("allwalls", 0, 0);
-            this.tables.Add(new Table(235, 325, 2));
-            this.tables.Add(new Table(1050 + 400, 625 + 50, 2));
-            this.tables.Add(new Table(1050 + 400, 525 + 50, 2));
-            this.tables.Add(new Table(1050 + 400, 425 + 50, 2));
-            this.tables.Add(new Table(1050 + 400, 325 + 50, 2));
-            this.tables.Add(new Table(1050 + 400, 225 + 50, 2));
-            this.tables.Add(new Table(1050 + 400, 125 + 50, 2));
-            this.tables.Add(new Table(1050 + 400, 25 + 50, 2));
-            this.tables.Add(new Table(850 + 400, 25 + 50, 2));
-            this.tables.Add(new Table(850 + 400, 125 + 50, 2));
-            this.tables.Add(new Table(830 + 400, 250 + 50, 4));
-            this.tables.Add(new Table(830 + 400, 375 + 50, 4));
-            this.tables.Add(new Table(830 + 400, 500 + 50, 4));
-            this.tables.Add(new Table(830 + 400, 625 + 50, 4));
-            this.tables.Add(new Table(610 + 400, 700, 4));
-            this.tables.Add(new Table(610 + 400, 75, 4));
-            this.tables.Add(new Table(610 + 400, 200, 4));
-            this.tables.Add(new Table(610 + 400, 325, 4));
-            this.tables.Add(new Table(610 + 400, 450, 4));
-            this.tables.Add(new Table(610 + 400, 575, 4));
-            this.tables.Add(new Table(330 + 400, 75, 6));
-            this.tables.Add(new Table(330 + 400, 200, 6));
-            this.tables.Add(new Table(330 + 400, 325, 6));
-            this.tables.Add(new Table(330 + 400, 450, 6));
-            this.tables.Add(new Table(330 + 400, 575, 6));
-            this.tables.Add(new Table(315 + 400, 700, 8));
-            this.tables.Add(new Table(420, 75, 8));
-            this.tables.Add(new Table(420, 200, 8));
-            this.tables.Add(new Table(420, 325, 8));
-            this.tables.Add(new Table(420, 450, 8));
-            this.tables.Add(new Table(360, 575, 10));
-            this.tables.Add(new Table(360, 700, 10));
+            this.checkpoints.Add(new Checkpoint(1370 + 20, 30));
+            this.checkpoints.Add(new Checkpoint(1145 + 20, 30));
+            this.checkpoints.Add(new Checkpoint(885 + 20, 30));
+            this.checkpoints.Add(new Checkpoint(620 + 20, 30));
+            this.checkpoints.Add(new Checkpoint(315 + 20, 30));
+            this.checkpoints.Add(new Checkpoint(5, 30));
+
+            this.tables.Add(new Table(1075 + 400, 625 + 70, 2));
+            this.tables.Add(new Table(1075 + 400, 525 + 70, 2));
+            this.tables.Add(new Table(1075 + 400, 425 + 70, 2));
+            this.tables.Add(new Table(1075 + 400, 325 + 70, 2));
+            this.tables.Add(new Table(1075 + 400, 225 + 70, 2));
+            this.tables.Add(new Table(1075 + 400, 125 + 70, 2));
+            this.tables.Add(new Table(1075 + 400, 25 + 70, 2));
+            this.tables.Add(new Table(825 + 425, 25 + 70, 2));
+            this.tables.Add(new Table(825 + 425, 125 + 70, 2));
+            this.tables.Add(new Table(825 + 425, 225 + 70, 2));
+            this.tables.Add(new Table(825 + 425, 350 + 70, 4));
+            this.tables.Add(new Table(825 + 425, 475 + 70, 4));
+            this.tables.Add(new Table(825 + 425, 600 + 70, 4));
+
+            this.tables.Add(new Table(550 + 450, 95 , 4));
+            this.tables.Add(new Table(550 + 450, 95 + 130 * 1, 4));
+            this.tables.Add(new Table(550 + 450, 95 + 130 * 2, 4));
+            this.tables.Add(new Table(550 + 450, 95 + 130 * 3, 4));
+            this.tables.Add(new Table(550 + 450, 95 + 130 * 4, 4));
+            this.tables.Add(new Table(275 + 450, 95, 4));
+            this.tables.Add(new Table(275 + 450, 95 + 130 * 1, 4));
+            this.tables.Add(new Table(275 + 450, 95 + 130 * 2, 6));
+            this.tables.Add(new Table(275 + 450, 95 + 130 * 3, 6));
+            this.tables.Add(new Table(275 + 450, 95 + 130 * 4, 6));
+            this.tables.Add(new Table(375 + 40, 95, 6));
+            this.tables.Add(new Table(375 + 40, + 95 + 130 * 1, 6));
+            this.tables.Add(new Table(375 + 40, + 95 + 130 * 2, 8));
+            this.tables.Add(new Table(375 + 40, 95 + 130 * 3, 8));
+            this.tables.Add(new Table(375 + 40, 95 + 130 * 4, 8));
+            this.tables.Add(new Table(25 + 25, 300, 8));
+            this.tables.Add(new Table(25 + 25, 300 + 130 * 1, 8));
+            this.tables.Add(new Table(25 + 25, 300 + 130 * 2, 10));
+            this.tables.Add(new Table(25 + 25, 300 + 130 * 3, 10));
             this.exchange = new Sprite("exchange", 0, 0);
         }
         //METHODS
@@ -57,6 +66,10 @@ namespace Room_Simulation.Views.GameObjects
         public void Update(UserInput userInput)
         {
             foreach (var item in tables)
+            {
+                item.Update(userInput);
+            }
+            foreach (var item in checkpoints)
             {
                 item.Update(userInput);
             }
@@ -68,6 +81,10 @@ namespace Room_Simulation.Views.GameObjects
         public void Draw(SpriteBatch spriteBatch)
         {
             this.allWalls.Draw(spriteBatch);
+            foreach (var item in checkpoints)
+            {
+                item.Draw(spriteBatch);
+            }
             foreach (var item in tables)
             {
                 item.Draw(spriteBatch);

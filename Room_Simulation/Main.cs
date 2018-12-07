@@ -25,7 +25,7 @@ namespace Room_Simulation
             graphics.PreferredBackBufferWidth = 1600;
             graphics.PreferredBackBufferHeight = 800;
             this.IsMouseVisible = true;
-            graphics.IsFullScreen = true; // C'est degeux en fullscreen mdr, touchez pas a ca XD
+            graphics.IsFullScreen = false; // C'est degeux en fullscreen mdr, touchez pas a ca XD
 
             //POINTING Content to ressources folder
             Content.RootDirectory = "Content";

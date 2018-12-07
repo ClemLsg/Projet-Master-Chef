@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Display\AnimatedSprite.cs" />
     <Compile Include="Views\GameObjects\Chair.cs" />
+    <Compile Include="Views\GameObjects\CheckPoint.cs" />
     <Compile Include="Views\GameObjects\GameObjectsBase.cs" />
     <Compile Include="Views\GameObjects\Table.cs" />
     <Compile Include="Views\Map.cs" />
@@ -74,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Graphics\Furnitures\candle.png" />
     <Content Include="Content\Graphics\Clients\client1.png" />
     <Content Include="Content\Graphics\Clients\client10.png" />
     <Content Include="Content\Graphics\Clients\client11.png" />

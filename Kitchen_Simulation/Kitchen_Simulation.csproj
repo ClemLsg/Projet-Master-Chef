@@ -88,6 +88,8 @@
     <Content Include="Content\Graphics\Furnitures\toilet.png" />
     <Content Include="Content\Graphics\Textures\walls.png" />
     <Content Include="Content\Graphics\Textures\woodfloor.png" />
+    <Content Include="Content\Sounds\coin.wav" />
+    <Content Include="Content\Sounds\wawa.wav" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -95,7 +97,6 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Sounds\" />
     <Folder Include="Controlers\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Room_Simulation.Views;
 
 namespace Room_Simulation
 {
@@ -27,7 +28,9 @@ namespace Room_Simulation
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            RessourcesManager ressources = new RessourcesManager();
+            ressources.LoadGraphics(Content);
+            ressources.LoadSounds(Content);
             base.Initialize();
         }
 

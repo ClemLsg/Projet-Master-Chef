@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Room_Simulation.Views.GameObjects
         private List<Table> tables = new List<Table>();
         private Sprite exchange;
         private Sprite allWalls;
-        private List<Checkpoint> checkpoints = new List<Checkpoint>();
+        public List<Checkpoint> checkpoints = new List<Checkpoint>();
 
         //CONSTRUCTOR
         public Map()
@@ -63,15 +64,15 @@ namespace Room_Simulation.Views.GameObjects
         }
         //METHODS
         //UPDATE & DRAW
-        public void Update(UserInput userInput)
+        public void Update(UserInput userInput, GameTime gameTime)
         {
             foreach (var item in tables)
             {
-                item.Update(userInput);
+                item.Update(userInput, gameTime);
             }
             foreach (var item in checkpoints)
             {
-                item.Update(userInput);
+                item.Update(userInput, gameTime);
             }
             this.allWalls.Update(0, 0);
             this.exchange.Update(100, -15);

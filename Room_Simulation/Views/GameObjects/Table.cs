@@ -83,13 +83,13 @@ namespace Room_Simulation.Views.GameObjects
         }
         //UPDATE & DRAW
 
-        public override void Update(UserInput userInput)
+        public override void Update(UserInput userInput, GameTime gameTime)
         {
             foreach (var item in chairsList)
             {
-                item.Update(userInput);
+                item.Update(userInput, gameTime);
             }
-            base.Update(userInput);
+            base.Update(userInput, gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {

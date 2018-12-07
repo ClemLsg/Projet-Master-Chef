@@ -27,9 +27,9 @@ namespace Room_Simulation.Views.GameObjects
         // METHODS
 
         // UPDATE & DRAW
-        public override void Update(UserInput userInput)
+        public override void Update(UserInput userInput, GameTime gametime)
         {
-            base.Update(userInput);
+            base.Update(userInput, gametime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

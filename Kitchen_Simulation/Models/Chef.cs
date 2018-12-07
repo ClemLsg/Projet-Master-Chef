@@ -6,7 +6,34 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class Chef
+    public sealed class Chef
     {
+
+        private static Chef instance = null;
+        private static readonly object padlock = new object();
+
+        Chef()
+        {
+        }
+
+        public static Chef Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Chef();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+        public void AssignOrder(Cook c, Recipe r)
+        {
+            c.SetCookingRecipe(r);
+        }
     }
 }

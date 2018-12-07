@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Room_Simulation.Views;
 
 namespace Room_Simulation
 {
@@ -9,12 +10,24 @@ namespace Room_Simulation
     /// </summary>
     public class Main : Game
     {
+        //FIELDS
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Simulation simulation;
+        KeyboardState oldKeyBoard; // Old keyboard state, used by the UserInput to detect state modification
+        MouseState oldMouse; // Old mouse state, used by the UserInput to detect state modification
 
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
+
+            //CONFIGURATION : Of the Monogame window
+            graphics.PreferredBackBufferWidth = 1600;
+            graphics.PreferredBackBufferHeight = 800;
+            this.IsMouseVisible = true;
+            graphics.IsFullScreen = false; // C'est degeux en fullscreen mdr, touchez pas a ca XD
+
+            //POINTING Content to ressources folder
             Content.RootDirectory = "Content";
         }
 
@@ -29,6 +42,7 @@ namespace Room_Simulation
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            simulation = new Simulation(); // Initialising the simulation
         }
 
         /// <summary>
@@ -40,7 +54,10 @@ namespace Room_Simulation
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            // Loading the ressources
+            RessourcesManager ressources = new RessourcesManager();
+            ressources.LoadGraphics(Content);
+            ressources.LoadSounds(Content);
         }
 
         /// <summary>
@@ -63,7 +80,7 @@ namespace Room_Simulation
                 Exit();
 
             // TODO: Add your update logic here
-
+            this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
             base.Update(gameTime);
         }
 
@@ -73,11 +90,13 @@ namespace Room_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            GraphicsDevice.Clear(Color.DarkGray);
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
-
+            this.simulation.Draw(this.spriteBatch);
             base.Draw(gameTime);
+            spriteBatch.End();
         }
     }
 }

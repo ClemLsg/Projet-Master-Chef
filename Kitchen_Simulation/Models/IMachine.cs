@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class IMachine
+    interface IMachine
     {
+        bool IsWashing { get; set; }
+
+        void Wash();
+ 
     }
 }

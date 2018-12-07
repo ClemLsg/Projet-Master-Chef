@@ -8,5 +8,9 @@ namespace Kitchen_Simulation.Models
 {
     class Plate
     {
+        public Plate()
+        {
+
+        }
     }
 }

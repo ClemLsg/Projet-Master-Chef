@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class Cook
+    public class Cook
     {
+        private Recipe CookingRecipe;
+
+        internal Recipe GetCookingRecipe()
+        {
+            return CookingRecipe;
+        }
+
+        internal void SetCookingRecipe(Recipe value)
+        {
+            CookingRecipe = value;
+        }
+
         public void GetTool()
         {
 

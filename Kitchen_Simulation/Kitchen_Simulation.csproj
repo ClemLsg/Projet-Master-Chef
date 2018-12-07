@@ -42,6 +42,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Models\Chef.cs" />
+    <Compile Include="Models\Cleaner.cs" />
+    <Compile Include="Models\Cook.cs" />
+    <Compile Include="Models\DishWasher.cs" />
+    <Compile Include="Models\IMachine.cs" />
+    <Compile Include="Models\KitchenClerk.cs" />
+    <Compile Include="Models\KitchenModel.cs" />
+    <Compile Include="Models\Plate.cs" />
+    <Compile Include="Models\SQLConnector.cs" />
+    <Compile Include="Models\WashinMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,7 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controlers\Cs.txt" />
     <Content Include="Icon.ico" />
+    <Content Include="Models\Cs.txt" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

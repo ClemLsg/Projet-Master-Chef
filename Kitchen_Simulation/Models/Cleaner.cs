@@ -8,5 +8,19 @@ namespace Kitchen_Simulation.Models
 {
     class Cleaner
     {
+        public void GetDirtyTools()
+        {
+
+        }
+
+        public void LaunchDishMachine()
+        {
+
+        }
+
+        public void LaunchWashingMachine()
+        {
+
+        }
     }
 }

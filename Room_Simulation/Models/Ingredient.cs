@@ -1,7 +1,10 @@
 namespace Room_Simulation.Models
 {
-    public class Ingredient
+    public interface Ingredient
     {
-        
+        //FIELDS
+        string Name { get; set; }
+        IngredientTypes Type { get; set; }
+
     }
 }

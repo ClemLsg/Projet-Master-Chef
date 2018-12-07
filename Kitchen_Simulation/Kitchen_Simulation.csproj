@@ -47,9 +47,13 @@
     <Compile Include="Models\Cook.cs" />
     <Compile Include="Models\DishWasher.cs" />
     <Compile Include="Models\IMachine.cs" />
+    <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\IngredientType.cs" />
     <Compile Include="Models\KitchenClerk.cs" />
     <Compile Include="Models\KitchenModel.cs" />
     <Compile Include="Models\Plate.cs" />
+    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\RecipeType.cs" />
     <Compile Include="Models\SQLConnector.cs" />
     <Compile Include="Models\WashinMachine.cs" />
     <Compile Include="Program.cs" />

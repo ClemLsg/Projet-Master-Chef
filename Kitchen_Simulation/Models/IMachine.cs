@@ -8,8 +8,8 @@ namespace Kitchen_Simulation.Models
 {
     interface IMachine
     {
-        bool IsWashing { get; set; }
-
+        bool GetIsWashing();
+        void SetIsWashing(bool value);
         void Wash();
  
     }

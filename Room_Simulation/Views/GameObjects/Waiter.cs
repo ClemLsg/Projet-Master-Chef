@@ -88,7 +88,7 @@ namespace Room_Simulation.Views.GameObjects
         public override void Update(UserInput userInput, GameTime gametime)
         {
             this.timer += gametime.ElapsedGameTime.Milliseconds;
-            if(timer > 1000)
+            if(timer > 2000)
             {
                 timer = 0;
                 if (isTakingPlate)

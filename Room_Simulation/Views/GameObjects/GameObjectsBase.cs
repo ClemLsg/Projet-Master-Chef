@@ -16,7 +16,7 @@ namespace Room_Simulation.Views.GameObjects
         private bool moving = false;
         private int goToX;
         private int goToY;
-        private int speed = 50;
+        private int speed = 100;
 
         //CONSTRUTOR
         protected GameObjectsBase(int x, int y, Sprite sprite)
@@ -44,7 +44,7 @@ namespace Room_Simulation.Views.GameObjects
                 if (hitbox.X == goToX && hitbox.Y == goToY)
                 {
                     moving = false;
-                    speed = 50;
+                    speed = 100;
                 }
             }
             this.sprite.Update(this.hitbox.X, this.hitbox.Y);

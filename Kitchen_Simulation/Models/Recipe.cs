@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class Recipe
+    public class Recipe
     {
 
         public string Name { get; set; }

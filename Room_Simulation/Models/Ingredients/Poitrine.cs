@@ -1,6 +1,6 @@
 namespace Room_Simulation.Models
 {
-    public class Ingredient
+    public class Poitrine : Ingredient
     {
         
     }

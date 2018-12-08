@@ -2,7 +2,7 @@ using Room_Simulation.Models.Ingredients;
 
 namespace Room_Simulation.Models.Recipes
 {
-    public class PateDePorcRecipe : Recipe
+    public class PateDePorc : Recipe
     {
         protected override void CreateIngredients()
         {

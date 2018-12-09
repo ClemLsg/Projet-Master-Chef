@@ -13,7 +13,7 @@ namespace Room_Simulation.Views.GameObjects
     {
         // FIELDS
         private int timer = 0;
-        private int actualPosition = 21;
+        private int actualPosition = 10;
         private bool isTakingPlate = false;
 
         // CONSTRUCTOR
@@ -39,64 +39,68 @@ namespace Room_Simulation.Views.GameObjects
 
         public void returnToExchange()
         {
-            isTakingPlate = true;
-            if(actualPosition < 33 && actualPosition > 25)
+            if (!this.moving)
             {
-                GoTo(1370 + 20, 30);
-                actualPosition = 33;
+                isTakingPlate = true;
+                if (actualPosition < 33 && actualPosition > 25)
+                {
+                    GoTo(1370 + 20, 30);
+                    actualPosition = 33;
+                }
+                else if (actualPosition < 26 && actualPosition > 19)
+                {
+                    GoTo(1145 + 20, 30);
+                    actualPosition = 34;
+                }
+                else if (actualPosition < 20 && actualPosition > 14)
+                {
+                    GoTo(885 + 20, 30);
+                    actualPosition = 35;
+                }
+                else if (actualPosition < 15 && actualPosition > 9)
+                {
+                    GoTo(620 + 20, 30);
+                    actualPosition = 36;
+                }
+                else if (actualPosition < 10 && actualPosition > 4)
+                {
+                    GoTo(315 + 20, 30);
+                    actualPosition = 37;
+                }
+                else if (actualPosition < 5 && actualPosition > 0)
+                {
+                    GoTo(5, 30);
+                    actualPosition = 38;
+                }
+                else if (actualPosition < 39 && actualPosition > 32)
+                {
+                    GoTo(0, 0);
+                    actualPosition = 0;
+                    isTakingPlate = false;
+                }
+                else
+                {
+                    GoTo(0, 0);
+                    actualPosition = 0;
+                    isTakingPlate = false;
+                }
             }
-            else if (actualPosition < 26 && actualPosition > 19)
-            {
-                GoTo(1145 + 20, 30);
-                actualPosition = 34;
-            }
-            else if (actualPosition < 20 && actualPosition > 14)
-            {
-                GoTo(885 + 20, 30);
-                actualPosition = 35;
-            }
-            else if (actualPosition < 15 && actualPosition > 9)
-            {
-                GoTo(620 + 20, 30);
-                actualPosition = 36;
-            }
-            else if (actualPosition < 10 && actualPosition > 4)
-            {
-                GoTo(315 + 20, 30);
-                actualPosition = 37;
-            }
-            else if (actualPosition < 5 && actualPosition > 0)
-            {
-                GoTo(5, 30);
-                actualPosition = 38;
-            }
-            else if (actualPosition < 39 && actualPosition > 32)
-            {
-                GoTo(0,0);
-                actualPosition = 0;
-                isTakingPlate = false;
-            }
-            else
-            {
-                GoTo(0, 0);
-                actualPosition = 0;
-                isTakingPlate = false;
-            }
+            
         }
 
         // UPDATE & DRAW
         public override void Update(UserInput userInput, GameTime gametime)
         {
             this.timer += gametime.ElapsedGameTime.Milliseconds;
-            if(timer > 1000)
-            {
-                timer = 0;
-                if (isTakingPlate)
-                {
-                    returnToExchange();
-                }
-            }
+            //if(timer > 1000)
+            //{
+            //    timer = 0;
 
+            //}
+            if (isTakingPlate)
+            {
+                returnToExchange();
+            }
             base.Update(userInput, gametime);
         }
 

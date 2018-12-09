@@ -37,7 +37,7 @@ namespace Room_Simulation.Views.GameObjects
            // this.GoTo(x, y);
         }
 
-        public void takePlate()
+        public void returnToExchange()
         {
             isTakingPlate = true;
             if(actualPosition < 33 && actualPosition > 25)
@@ -93,7 +93,7 @@ namespace Room_Simulation.Views.GameObjects
                 timer = 0;
                 if (isTakingPlate)
                 {
-                    takePlate();
+                    returnToExchange();
                 }
             }
 

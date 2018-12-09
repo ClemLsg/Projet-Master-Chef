@@ -6,13 +6,14 @@ namespace Room_Simulation.Models.Recipes
     public abstract class Recipe
     {
         public Dictionary<Ingredient, int> Ingredients { get; } = new Dictionary<Ingredient, int>();
+        public abstract RecipeTypes RecipeTypes { get; }
 
         public static List<Recipe> Recipes = new List<Recipe>
         {
             new PateDePorc(),
         };
 
-        public Recipe()
+        protected Recipe()
         {
             this.CreateIngredients();
         }
@@ -21,6 +22,9 @@ namespace Room_Simulation.Models.Recipes
 
         protected void AddIngredients(Ingredient ingredient, int quantity = 1)
         {
+            if (quantity <= 0 )
+                throw new ArgumentException();
+            
             this.Ingredients.Add(ingredient, quantity);
         }
     }

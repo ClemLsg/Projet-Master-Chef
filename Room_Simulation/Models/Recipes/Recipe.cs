@@ -5,7 +5,12 @@ namespace Room_Simulation.Models.Recipes
 {
     public abstract class Recipe
     {
-        private Dictionary<Ingredient, int> Ingredients { get; } = new Dictionary<Ingredient, int>();
+        public Dictionary<Ingredient, int> Ingredients { get; } = new Dictionary<Ingredient, int>();
+
+        public static List<Recipe> Recipes = new List<Recipe>
+        {
+            new PateDePorc(),
+        };
 
         public Recipe()
         {

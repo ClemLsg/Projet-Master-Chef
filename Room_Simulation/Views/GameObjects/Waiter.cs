@@ -1,8 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Room_Simulation.Views.Display;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +39,11 @@ namespace Room_Simulation.Views.GameObjects
            // this.GoTo(x, y);
         }
 
+        public void goToTable(int tableNumb)
+        {
+
+        }
+
         public void returnToExchange()
         {
             if (!this.moving)
@@ -44,7 +51,7 @@ namespace Room_Simulation.Views.GameObjects
                 isTakingPlate = true;
                 if (actualPosition < 33 && actualPosition > 25)
                 {
-                    GoTo(1370 + 20, 30);
+                    GoTo(1410, 30);
                     actualPosition = 33;
                 }
                 else if (actualPosition < 26 && actualPosition > 19)
@@ -92,12 +99,28 @@ namespace Room_Simulation.Views.GameObjects
         public override void Update(UserInput userInput, GameTime gametime)
         {
             this.timer += gametime.ElapsedGameTime.Milliseconds;
-            //if(timer > 1000)
-            //{
-            //    timer = 0;
-
-            //}
-            if (isTakingPlate)
+            Debug.WriteLine("X:" + hitbox.X + "  Y:" + hitbox.Y);
+            if(userInput.IsKeyDown(Keys.Q))
+            {
+                this.hitbox.X--;
+            }
+            if (userInput.IsKeyDown(Keys.S))
+            {
+                this.hitbox.Y++;
+            }
+            if (userInput.IsKeyDown(Keys.D))
+            {
+                this.hitbox.X++;
+            }
+            if (userInput.IsKeyDown(Keys.Z))
+            {
+                this.hitbox.Y--;
+            }
+            if (userInput.IsKeyDown(Keys.P))
+            {
+                GoTo(1410, 30);
+            }
+            if (isTakingPlate) // Way to exchange area
             {
                 returnToExchange();
             }

@@ -11,6 +11,8 @@ namespace Room_Simulation.Models.Recipes
         public static List<Recipe> Recipes = new List<Recipe>
         {
             new PateDePorc(),
+            new OeufsCocotte(),
+            new Gaspatcho(),
         };
 
         protected Recipe()

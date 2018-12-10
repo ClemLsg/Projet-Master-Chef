@@ -1,9 +1,12 @@
+using System.Runtime.Remoting.Messaging;
 using Room_Simulation.Models.Ingredients;
 
 namespace Room_Simulation.Models.Recipes
 {
     public class PateDePorc : Recipe
     {
+        public override RecipeTypes RecipeTypes => RecipeTypes.Main;
+
         protected override void CreateIngredients()
         {
             this.AddIngredients(new Poitrine(), 2);

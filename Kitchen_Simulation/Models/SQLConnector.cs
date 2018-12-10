@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace Kitchen_Simulation.Models
 {
-    class SQLConnector
+    public class SQLConnector
     {
-        internal static SQLConnector Instance { get; set; }
+        public static SQLConnector Instance { get; set; }
 
         public void Connect(string db)
         {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class KitchenClerk
+    public class KitchenClerk
     {
-        internal List<Ingredient> IngredientsList { get; set; }
+        public List<Ingredient> IngredientsList { get; set; }
 
         public void pellVegetable()
         {

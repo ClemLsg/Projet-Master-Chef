@@ -10,6 +10,7 @@ namespace Room_Simulation.Models
         private bool HasBread;
         private bool HasWater;
         private bool IsCleaned;
+        ClientGroup Clients;
 
         //CONSTRUCTOR
         public Table(int place)
@@ -47,6 +48,15 @@ namespace Room_Simulation.Models
         {
             IsCleaned = value;
         }
-    }
+        public ClientGroup GetClients()
+        {
+            return Clients;
+        }
+        public void SetClients (ClientGroup value)
+        {
+            Clients = value;
+        }
+    }   
+
 
 }

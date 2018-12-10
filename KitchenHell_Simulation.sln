@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kitchen_Simulation", "Kitch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Room_Simulation", "Room_Simulation\Room_Simulation.csproj", "{941209EC-FFA1-4272-8733-414B315A8C1A}"
 EndProject
+<<<<<<< Updated upstream
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenTests", "KitchenTests\KitchenTests.csproj", "{37613032-2262-4C71-8658-BAC741E823F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomTests", "RoomTests\RoomTests.csproj", "{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}"
+EndProject
+>>>>>>> Stashed changes
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +28,25 @@ Global
 		{941209EC-FFA1-4272-8733-414B315A8C1A}.Debug|x86.Build.0 = Debug|x86
 		{941209EC-FFA1-4272-8733-414B315A8C1A}.Release|x86.ActiveCfg = Release|x86
 		{941209EC-FFA1-4272-8733-414B315A8C1A}.Release|x86.Build.0 = Release|x86
+<<<<<<< Updated upstream
+=======
+		{37613032-2262-4C71-8658-BAC741E823F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{37613032-2262-4C71-8658-BAC741E823F8}.Release|x86.Build.0 = Release|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF7857D8-3F89-4C38-96BD-2EB7110F7AA7}.Release|x86.Build.0 = Release|Any CPU
+>>>>>>> Stashed changes
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

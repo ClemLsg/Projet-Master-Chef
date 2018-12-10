@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="KitchenClerkTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlConnectorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

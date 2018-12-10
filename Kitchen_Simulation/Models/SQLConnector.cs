@@ -12,13 +12,24 @@ namespace Kitchen_Simulation.Models
     {
         public static SQLConnector Instance { get; set; }
 
-        public void Connect(string db)
+        public bool Connect(string db)
         {
-            string cnx = "Data Source='" + db + "';Initial Catalog=DB_A2_WS2;Integrated Security=SSPI;";
-            SqlConnection SqlConnection = new SqlConnection();
-            SqlCommand sqlCommand = new SqlCommand();
-            SqlConnection.ConnectionString = cnx;
-            SqlConnection.Open();
+            bool connected = false;
+
+            try
+            {
+                string cnx = "Data Source='" + db + "';Initial Catalog=DB_A2_WS2;Integrated Security=SSPI;";
+                SqlConnection SqlConnection = new SqlConnection();
+                SqlCommand sqlCommand = new SqlCommand();
+                SqlConnection.ConnectionString = cnx;
+                SqlConnection.Open();
+                connected = true;
+            }
+            catch
+            {
+                
+            }
+            return connected;
         }
 
         public void Disconnect(SqlConnection connection)

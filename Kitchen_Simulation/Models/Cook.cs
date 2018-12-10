@@ -16,14 +16,17 @@ namespace Kitchen_Simulation.Models
             {
                 CookingRecipe = value;
                 notifyKitchenClerk(this.MakeRecipe());
+                notifyChef("Order completed", this);
             }
         }
 
         public List<KitchenClerk> KitchenClerks { get; private set; }
+        private Chef _chef { get; set; }
 
-        public Cook(List<KitchenClerk> kitchenClerks)
+        public Cook(List<KitchenClerk> kitchenClerks, Chef Chef)
         {
             this.KitchenClerks = kitchenClerks;
+            this._chef = Chef;
         }
 
         private Plate MakeRecipe()
@@ -62,6 +65,19 @@ namespace Kitchen_Simulation.Models
         public void AskIngredient(Ingredient ingredient, int quantity, KitchenClerk kitchenClerk)
         {
             kitchenClerk.BringIngredient(ingredient, quantity);
+        }
+
+        public void notifyKitchenClerk(Plate plate)
+        {
+            foreach (var kc in KitchenClerks)
+            {
+                kc.OnNotify(plate);
+            }
+        }
+
+        public void notifyChef(string value, Cook c)
+        {
+            _chef.OnCookNotify(value, c);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace KitchenTests
             SqlCommand sqlCommand = new SqlCommand();
             SqlConnection.ConnectionString = cnx;
             SqlConnection.Open();
-            Assert.AreEqual(true, sqlconnector.Disconnect(SqlConnection));
+            Assert.AreEqual(System.Data.ConnectionState.Closed, sqlconnector.Disconnect(SqlConnection));
         }
     }
 }

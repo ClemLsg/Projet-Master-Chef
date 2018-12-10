@@ -3,26 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kitchen_Simulation.Models.Tools;
 
 namespace Kitchen_Simulation.Models 
 {
-    class DishWasher : IMachine
+    public class DishWasher : Machine
     {
-        private bool IsWashing;
-
-        public bool GetIsWashing()
-        {
-            return IsWashing;
-        }
-
-        public void SetIsWashing(bool value)
-        {
-            IsWashing = value;
-        }
-
-        public void Wash()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

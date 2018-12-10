@@ -19,5 +19,14 @@ namespace Kitchen_Simulation.Models
         {
             this.IsFree = false;
         }
+
+        public void OnNotify(Plate plate)
+        {
+            if (this.IsFree)
+            {
+                //envoyer a la salle
+            }
+
+        }
     }
 }

@@ -36,9 +36,9 @@ namespace Kitchen_Simulation.Models
 
         }
 
-        public List<Ingredient> AskIngredient(Recipe recipe)
+        public Dictionary<Ingredient, int> AskIngredient(Recipe recipe)
         {
-            return recipe.Ingredients;
+            return CookingRecipe.Ingredients;
         }
     }
 }

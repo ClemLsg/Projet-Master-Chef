@@ -8,5 +8,12 @@ namespace Kitchen_Simulation.Models
 {
     class KitchenClerk
     {
+        internal List<Ingredient> IngredientsList { get; set; }
+
+        public void pellVegetable()
+        {
+
+        }
+        
     }
 }

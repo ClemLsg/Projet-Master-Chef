@@ -1,6 +1,6 @@
-namespace Room_Simulation.Models.Ingredients
+namespace Kitchen_Simulation.Models.Ingredients
 {
-    public class Poivre : Ingredient
+    public class HuileDOlive : Ingredient
     {
         public override IngredientTypes IngredientTypes => IngredientTypes.Other;
     }

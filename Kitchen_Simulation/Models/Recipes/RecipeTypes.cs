@@ -1,4 +1,4 @@
-namespace Room_Simulation.Models
+namespace Kitchen_Simulation.Models
 {
     public enum RecipeTypes
     {

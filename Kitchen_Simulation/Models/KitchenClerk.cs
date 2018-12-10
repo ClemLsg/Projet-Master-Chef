@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class KitchenClerk
+    public class KitchenClerk
     {
-        internal List<Ingredient> IngredientsList { get; set; }
+        public bool IsFree { get; private set; } = true;
 
         public void pellVegetable()
         {
-
+            
         }
-        
+
+        public void BringIngredient(Ingredient ingredient, int quantity)
+        {
+            this.IsFree = false;
+        }
     }
 }

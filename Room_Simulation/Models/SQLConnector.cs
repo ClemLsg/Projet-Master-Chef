@@ -16,7 +16,7 @@ namespace Kitchen_Simulation.Models
         public ConnectionState Connect(string db)
         {
             SqlConnection SqlConnection = new SqlConnection();
-            
+
             try
             {
                 string cnx = "Data Source='" + db + "';Initial Catalog=DB_A2_WS2;Integrated Security=SSPI;";
@@ -26,7 +26,7 @@ namespace Kitchen_Simulation.Models
             }
             catch
             {
-                
+
             }
             return SqlConnection.State;
         }

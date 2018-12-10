@@ -1,6 +1,6 @@
-namespace Room_Simulation.Models.Ingredients
+namespace Kitchen_Simulation.Models.Ingredients
 {
-    public class GruyereRape : Ingredient
+    public class Concombre : Ingredient
     {
         public override IngredientTypes IngredientTypes => IngredientTypes.Fresh;
     }

@@ -3,41 +3,65 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kitchen_Simulation.Models.Recipes;
 
 namespace Kitchen_Simulation.Models
 {
     public class Cook
     {
-        private Recipe CookingRecipe;
-
-        internal Recipe GetCookingRecipe()
+        public Recipe CookingRecipe
         {
-            return CookingRecipe;
+            private get { return CookingRecipe; }
+            set
+            {
+                CookingRecipe = value;
+                notifyKitchenClerk(this.MakeRecipe());
+            }
         }
 
-        internal void SetCookingRecipe(Recipe value)
+        public List<KitchenClerk> KitchenClerks { get; private set; }
+
+        public Cook(List<KitchenClerk> kitchenClerks)
         {
-            CookingRecipe = value;
+            this.KitchenClerks = kitchenClerks;
         }
 
-        public void GetTool()
+        private Plate MakeRecipe()
         {
+            Dictionary<Ingredient, int> ingredients = this.CookingRecipe.Ingredients;
 
+            foreach (var item in ingredients)
+            {
+                this.AskIngredient(item.Key, item.Value, this.GetFreeKitchenClerk());
+            }
+
+            return this.AssembleIngredients(ingredients.Keys.ToList());
         }
 
-        public void FreeTool()
+        private Plate AssembleIngredients(List<Ingredient> ingredients)
         {
-
+            return new Plate(this.CookingRecipe);
         }
 
-        public void BringTool()
+        private KitchenClerk GetFreeKitchenClerk()
         {
+            KitchenClerk kitchenClerkFree = null;
 
+            while (kitchenClerkFree == null)
+            {
+                foreach (KitchenClerk kitchenClerk in this.KitchenClerks)
+                {
+                    if (kitchenClerk.IsFree)
+                        kitchenClerkFree = kitchenClerk;
+                }
+            }
+
+            return kitchenClerkFree;
         }
 
-        public List<Ingredient> AskIngredient(Recipe recipe)
+        public void AskIngredient(Ingredient ingredient, int quantity, KitchenClerk kitchenClerk)
         {
-            return recipe.Ingredients;
+            kitchenClerk.BringIngredient(ingredient, quantity);
         }
     }
 }

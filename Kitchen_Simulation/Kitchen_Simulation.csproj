@@ -46,7 +46,7 @@
     <Compile Include="Models\Cleaner.cs" />
     <Compile Include="Models\Cook.cs" />
     <Compile Include="Models\DishWasher.cs" />
-    <Compile Include="Models\IMachine.cs" />
+    <Compile Include="Models\Machine.cs" />
     <Compile Include="Models\Ingredients\Concombre.cs" />
     <Compile Include="Models\Ingredients\CremeFraiche.cs" />
     <Compile Include="Models\Ingredients\Foie.cs" />
@@ -65,6 +65,7 @@
     <Compile Include="Models\Ingredients\Vinaigre.cs" />
     <Compile Include="Models\KitchenClerk.cs" />
     <Compile Include="Models\KitchenModel.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Plate.cs" />
     <Compile Include="Models\Recipes\Gaspatcho.cs" />
     <Compile Include="Models\Recipes\OeufsCocotte.cs" />
@@ -72,6 +73,8 @@
     <Compile Include="Models\Recipes\Recipe.cs" />
     <Compile Include="Models\Recipes\RecipeTypes.cs" />
     <Compile Include="Models\SQLConnector.cs" />
+    <Compile Include="Models\Tools\Louche.cs" />
+    <Compile Include="Models\Tools\Tool.cs" />
     <Compile Include="Models\WashinMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

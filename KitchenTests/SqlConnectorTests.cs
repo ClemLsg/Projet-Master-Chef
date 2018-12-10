@@ -12,7 +12,8 @@ namespace KitchenTests
         public void testConnect()
         {
             SQLConnector sqlconnector = new SQLConnector();
-            Assert.AreEqual(true,sqlconnector.Connect("KEVIN\\SQLEXPRESS"));
+            Assert.AreEqual(System.Data.ConnectionState.Open, sqlconnector.Connect("KEVIN\\SQLEXPRESS"));
+            //Assert.AreEqual(true,sqlconnector.Connect("KEVIN\\SQLEXPRESS"));
         }
 
         [TestMethod]

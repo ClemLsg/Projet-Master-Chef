@@ -10,11 +10,6 @@ namespace Kitchen_Simulation.Models
     {
         public bool IsFree { get; private set; } = true;
 
-        public void pellVegetable()
-        {
-            
-        }
-
         public void BringIngredient(Ingredient ingredient, int quantity)
         {
             this.IsFree = false;
@@ -24,7 +19,7 @@ namespace Kitchen_Simulation.Models
         {
             if (this.IsFree)
             {
-                //envoyer a la salle
+                //envoyer a la salle (Socket)
             }
 
         }

@@ -21,12 +21,10 @@ namespace Kitchen_Simulation.Models
         }
 
         public List<KitchenClerk> KitchenClerks { get; private set; }
-        private Chef _chef { get; set; }
 
-        public Cook(List<KitchenClerk> kitchenClerks, Chef Chef)
+        public Cook(List<KitchenClerk> kitchenClerks)
         {
             this.KitchenClerks = kitchenClerks;
-            this._chef = Chef;
         }
 
         private Plate MakeRecipe()
@@ -77,7 +75,7 @@ namespace Kitchen_Simulation.Models
 
         public void notifyChef(string value, Cook c)
         {
-            _chef.OnCookNotify(value, c);
+            Chef.Instance.OnCookNotify(value, c);
         }
     }
 }

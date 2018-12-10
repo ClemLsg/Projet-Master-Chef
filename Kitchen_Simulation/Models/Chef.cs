@@ -10,13 +10,10 @@ namespace Kitchen_Simulation.Models
     public sealed class Chef
     {
         private static Chef _instance = null;
-        private List<Recipe> _recipePool = null;
-        private List<Cook> _waitingCooks = null;
+        private readonly List<Recipe> _recipePool = new List<Recipe>();
+        private readonly List<Cook> _waitingCooks = new List<Cook>();
 
-        private Chef()
-        {
-         
-        }
+        private Chef() {}
 
         public static Chef Instance => _instance ?? (_instance = new Chef());
 
@@ -25,12 +22,12 @@ namespace Kitchen_Simulation.Models
             this._recipePool.Add(recipe);
         }
 
-        public void AssignOrder(Cook cook, Recipe recipe)
+        public static void AssignOrder(Cook cook, Recipe recipe)
         {
             cook.CookingRecipe = recipe;
         }
         
-        public void ReciveNewOrder(Order order)
+        public void ReceiveNewOrder(Order order)
         {
             AddToPool(order.Starter);
             AddToPool(order.Main);
@@ -43,16 +40,14 @@ namespace Kitchen_Simulation.Models
 
         public void OnCookNotify(string value, Cook c)
         {
-            if (value == "Order completed")
+            if (value != "Order completed") return;
+            
+            if(_recipePool.Any())
             {
-                if(_recipePool.Any())
-                {
-                    AssignOrder(c, _recipePool.First());
-                } else
-                {
-                    _waitingCooks.Add(c);
-                }
-                
+                AssignOrder(c, _recipePool.First());
+            } else
+            {
+                _waitingCooks.Add(c);
             }
 
         }

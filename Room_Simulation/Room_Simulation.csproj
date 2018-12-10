@@ -50,6 +50,7 @@
     <Compile Include="Models\Ingredients\GruyereRape.cs" />
     <Compile Include="Models\Ingredients\HuileDOlive.cs" />
     <Compile Include="Models\Ingredients\Ingredient.cs" />
+    <Compile Include="Models\Ingredients\IngredientTypes.cs" />
     <Compile Include="Models\Ingredients\Oeuf.cs" />
     <Compile Include="Models\Ingredients\Oignon.cs" />
     <Compile Include="Models\Ingredients\PainRassi.cs" />
@@ -59,14 +60,13 @@
     <Compile Include="Models\Ingredients\Sel.cs" />
     <Compile Include="Models\Ingredients\Tomate.cs" />
     <Compile Include="Models\Ingredients\Vinaigre.cs" />
-    <Compile Include="Models\IngredientTypes.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Recipes\Gaspatcho.cs" />
     <Compile Include="Models\Recipes\OeufsCocotte.cs" />
     <Compile Include="Models\Recipes\PateDePorc.cs" />
     <Compile Include="Models\Recipes\Recipe.cs" />
-    <Compile Include="Models\RecipeTypes.cs" />
+    <Compile Include="Models\Recipes\RecipeTypes.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Square.cs" />
     <Compile Include="Models\Table.cs" />

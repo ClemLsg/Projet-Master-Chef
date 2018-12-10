@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kitchen_Simulation.Models.Recipes;
 
 namespace Kitchen_Simulation.Models
 {

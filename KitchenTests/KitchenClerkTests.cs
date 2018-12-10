@@ -12,13 +12,14 @@ namespace KitchenTests
     [TestClass]
     public class KitchenClerkTests
     {
-        KitchenClerk kitchenClerk = new KitchenClerk();
+        
 
         
         [TestMethod]
         public void getIngredients()
         {
-            
+            KitchenClerk kitchenClerk = new KitchenClerk();
+            kitchenClerk.IngredientsList = new List<Ingredient>();
             Sel salt = new Sel();
             Tomate tomato = new Tomate();
             Oeuf egg = new Oeuf();
@@ -32,7 +33,7 @@ namespace KitchenTests
             kitchenClerk.IngredientsList.Add(tomato);
             kitchenClerk.IngredientsList.Add(egg);
 
-            Assert.AreEqual();
+            Assert.AreEqual(Ingredients.ElementAt(1), kitchenClerk.IngredientsList.ElementAt(1));
 
 
 

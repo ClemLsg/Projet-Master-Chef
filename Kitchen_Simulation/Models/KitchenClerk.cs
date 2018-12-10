@@ -12,7 +12,7 @@ namespace Kitchen_Simulation.Models
 
         public void pellVegetable()
         {
-
+            
         }
         
     }

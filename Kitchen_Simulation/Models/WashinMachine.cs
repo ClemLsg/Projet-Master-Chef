@@ -6,23 +6,8 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class WashinMachine : IMachine
+    class WashinMachine : Machine
     {
-        private bool IsWashing;
-
-        public bool GetIsWashing()
-        {
-            return IsWashing;
-        }
-
-        public void SetIsWashing(bool value)
-        {
-            IsWashing = value;
-        }
-
-        public void Wash()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

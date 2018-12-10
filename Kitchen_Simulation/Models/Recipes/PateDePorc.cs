@@ -1,10 +1,16 @@
 using Kitchen_Simulation.Models.Ingredients;
+using Kitchen_Simulation.Models.Tools;
 
 namespace Kitchen_Simulation.Models.Recipes
 {
     public class PateDePorc : Recipe
     {
         public override RecipeTypes RecipeTypes => RecipeTypes.Main;
+
+        protected override void CreateTools()
+        {
+            this.Tools.Add(new Louche());
+        }
 
         protected override void CreateIngredients()
         {

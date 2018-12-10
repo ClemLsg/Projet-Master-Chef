@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Kitchen_Simulation.Views;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -27,7 +28,9 @@ namespace Kitchen_Simulation
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            RessourcesManager ressources = new RessourcesManager();
+            ressources.LoadGraphics(Content);
+            ressources.LoadSounds(Content);
             base.Initialize();
         }
 

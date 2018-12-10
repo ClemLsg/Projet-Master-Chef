@@ -445,6 +445,12 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Workers/serveur.png
 
+#begin Sounds/checked.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/checked.wav
+
 #begin Sounds/coin.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor

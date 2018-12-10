@@ -111,6 +111,7 @@
     <Content Include="Content\Graphics\Workers\cooker.png" />
     <Content Include="Content\Graphics\Workers\hotelmaster.png" />
     <Content Include="Content\Graphics\Workers\serveur.png" />
+    <Content Include="Content\Sounds\checked.wav" />
     <Content Include="Content\Sounds\coin.wav" />
     <Content Include="Content\Sounds\wawa.wav" />
     <Content Include="Icon.ico" />

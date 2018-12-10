@@ -29,7 +29,8 @@ namespace Room_Simulation.Views
             if (justOne)
             {
                 justOne = false;
-                waiter1.returnToExchange();
+                //waiter1.returnToExchange();
+                //waiter1.goToTable(26);
             }
             waiter1.Update(userInput, gameTime);
             map.Update(userInput, gameTime);

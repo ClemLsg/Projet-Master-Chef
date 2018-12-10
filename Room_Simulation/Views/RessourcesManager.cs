@@ -63,7 +63,7 @@ namespace Room_Simulation.Views
 
         public void LoadSounds(ContentManager content)
         {
-            List<string> SoundsSources = new List<string>() { "wawa" , "coin" };
+            List<string> SoundsSources = new List<string>() { "wawa" , "coin" , "checked"};
 
             Sounds = new Dictionary<string, SoundEffect>();
 

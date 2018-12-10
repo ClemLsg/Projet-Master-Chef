@@ -68,6 +68,7 @@
     <Compile Include="Models\Recipes\Recipe.cs" />
     <Compile Include="Models\Recipes\RecipeTypes.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\SQLConnector.cs" />
     <Compile Include="Models\Square.cs" />
     <Compile Include="Models\Table.cs" />
     <Compile Include="Models\Waiter.cs" />
@@ -79,6 +80,7 @@
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>

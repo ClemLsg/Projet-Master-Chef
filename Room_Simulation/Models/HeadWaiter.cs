@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class HeadWaiter
+    public class HeadWaiter
     {
         Order ClientOrder = new Order();
 

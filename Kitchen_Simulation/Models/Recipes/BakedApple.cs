@@ -1,4 +1,7 @@
-﻿using Room_Simulation.Models.Ingredients;
+﻿
+using Kitchen_Simulation.Models;
+using Kitchen_Simulation.Models.Ingredients;
+using Kitchen_Simulation.Models.Recipes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +16,7 @@ namespace Room_Simulation.Models.Recipes
 
         protected override void CreateIngredients()
         {
-            this.AddIngredients(new AppleIngredient(), 1);
+            this.AddIngredients(new Apple(), 1);
             this.AddIngredients(new Sugar(), 1);
         }
     }

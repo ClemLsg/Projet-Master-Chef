@@ -1,4 +1,6 @@
+using Kitchen_Simulation.Models;
 using Kitchen_Simulation.Models.Ingredients;
+using Kitchen_Simulation.Models.Recipes;
 
 namespace Kitchen_Simulation.Models.Recipes
 {

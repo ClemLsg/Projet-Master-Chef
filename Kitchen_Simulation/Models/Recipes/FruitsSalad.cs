@@ -1,4 +1,6 @@
-﻿using Room_Simulation.Models.Ingredients;
+﻿using Kitchen_Simulation.Models;
+using Kitchen_Simulation.Models.Ingredients;
+using Kitchen_Simulation.Models.Recipes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,7 @@ namespace Room_Simulation.Models.Recipes
         {
             this.AddIngredients(new Strawberry(), 3);
             this.AddIngredients(new Banana(), 1);
-            this.AddIngredients(new AppleIngredient(), 1);
+            this.AddIngredients(new Apple(), 1);
         }
     }
 }

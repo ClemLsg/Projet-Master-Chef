@@ -1,3 +1,4 @@
+using Kitchen_Simulation.Models;
 using System.Collections.Generic;
 
 namespace Room_Simulation.Models
@@ -6,6 +7,8 @@ namespace Room_Simulation.Models
     {
         //FIELDS
         public List<Table> Tables { get; set; }
+
+        public HeadWaiter HeadWaiters { get; set; }
         public List<Waiter> Waiters { get; set; }
 
         //CONSTRUCTOR

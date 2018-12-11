@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Room_Simulation.Views;
+using Room_Simulation.Views.GameObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,9 +15,11 @@ namespace Kitchen_Simulation.Views
     public class Simulation
     {
         //FIELDS
+        private Map map;
         //CONSTRUCTOR
         public Simulation()
         {
+            map = new Map();
         }
 
         //METHODS
@@ -27,12 +30,12 @@ namespace Kitchen_Simulation.Views
         //UPDATE
         public void Update(GameTime gameTime, UserInput userInput)
         {
-
+            map.Update(userInput, gameTime);
         }
         //DRAW
         public void Draw(SpriteBatch spritebatch)
         {
-
+            map.Draw(spritebatch);
         }
     }
 }

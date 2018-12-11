@@ -9,29 +9,29 @@ namespace Kitchen_Simulation.Models
 {
     class HeadWaiter
     {
-        Order ClientOrder = new Order();
+        public Square square ;
 
         public HeadWaiter(Square square)
         {
             //Constructor
-
+            Console.log("Bonjour");
         }
 
-        public static void GiveMenu()
+        public static GiveMenu()
         {
-
+            return order;
         }
-        public static TakeOrder(Client client)
+        public static TakeOrder(Order order)
         {
-
+            return order;
         }
-        public static BringOrder()
+        public static BringOrder(Order order)
         {
-
+            return Order;
         }
-        public static void SwitchSquare(Square square)
+        public static void SwitchSquare(Square NewSquare)
         {
-
+            this.Square = NewSquare;
         }
     }
 }

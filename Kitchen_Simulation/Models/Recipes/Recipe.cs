@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Kitchen_Simulation.Models.Tools;
 
 namespace Kitchen_Simulation.Models.Recipes
 {
@@ -7,6 +8,7 @@ namespace Kitchen_Simulation.Models.Recipes
     {
         public Dictionary<Ingredient, int> Ingredients { get; } = new Dictionary<Ingredient, int>();
         public abstract RecipeTypes RecipeTypes { get; }
+        public List<Tool> Tools { get; } = new List<Tool>();
 
         public static List<Recipe> Recipes = new List<Recipe>
         {
@@ -18,8 +20,10 @@ namespace Kitchen_Simulation.Models.Recipes
         protected Recipe()
         {
             this.CreateIngredients();
+            this.CreateTools();
         }
 
+        protected abstract void CreateTools();
         protected abstract void CreateIngredients();
 
         protected void AddIngredients(Ingredient ingredient, int quantity = 1)

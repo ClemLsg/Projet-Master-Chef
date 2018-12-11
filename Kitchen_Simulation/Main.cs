@@ -12,7 +12,8 @@ namespace Kitchen_Simulation
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        Simulation simulation;
+        RessourcesManager ressources;
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -28,9 +29,10 @@ namespace Kitchen_Simulation
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            RessourcesManager ressources = new RessourcesManager();
-            ressources.LoadGraphics(Content);
-            ressources.LoadSounds(Content);
+            ressources = new RessourcesManager();
+
+            simulation = new Simulation(); // Initialising the simulation
+
             base.Initialize();
         }
 
@@ -40,6 +42,9 @@ namespace Kitchen_Simulation
         /// </summary>
         protected override void LoadContent()
         {
+
+            ressources.LoadGraphics(Content);
+            ressources.LoadSounds(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 

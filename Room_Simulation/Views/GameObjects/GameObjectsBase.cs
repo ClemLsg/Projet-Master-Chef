@@ -16,7 +16,7 @@ namespace Room_Simulation.Views.GameObjects
         public bool moving = false;
         private int goToX;
         private int goToY;
-        private int speed = 10;
+        public int speed = 10;
 
         //CONSTRUTOR
         protected GameObjectsBase(int x, int y, Sprite sprite)

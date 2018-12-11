@@ -10,8 +10,8 @@ namespace Room_Simulation.Views.GameObjects
 {
     public class Table : GameObjectsBase
     {
-        private int capacity;
-        private List<Chair> chairsList = new List<Chair>();
+        public int capacity;
+        public List<Chair> chairsList = new List<Chair>();
 
         //CONSTRUCTOR
         public Table(int x, int y, int capacity)

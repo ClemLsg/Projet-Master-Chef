@@ -7,7 +7,7 @@ using Kitchen_Simulation.Models.Recipes;
 
 namespace Kitchen_Simulation.Models
 {
-    class Plate
+    public class Plate
     {
         public Recipe Recipe { get; private set; } = null;
         

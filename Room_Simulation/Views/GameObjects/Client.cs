@@ -11,23 +11,27 @@ using System.Threading.Tasks;
 
 namespace Room_Simulation.Views.GameObjects
 {
-    public class Waiter : GameObjectsBase
+    public class Client : GameObjectsBase
     {
         // FIELDS
-        private Random random = new Random();
+        private Random random;
         private int timer = 0;
         private int oldPosition = -1;
         private int actualPosition = 32;
         private bool isTakingPlate = false;
         private bool isGoingToTable = false;
-     //   private bool isGoingToCheckPoint = false;
+        public int Table = -1;
+        //private bool isGoingToCheckPoint = false;
         private int targetTable = -1;
+        //public List<int> spriteSizeX = new List<int>() {52,3 };
+        //public List<int> spriteSizeY = new List<int>() {58, 3 };
 
         // CONSTRUCTOR
-        public Waiter(int x, int y)
-            : base(x, y, new AnimatedSprite("serveur", 28, 60, 0, SheetOrientation.HORIZONTAL))
+        public Client(int x, int y, int clientSkin, List<int> spriteSizeX, List<int> spriteSizeY)
+            : base(x, y, new AnimatedSprite("client" + clientSkin, spriteSizeX[clientSkin], spriteSizeY[clientSkin], 0, SheetOrientation.HORIZONTAL))
         {
 
+            random = new Random(clientSkin);
         }
 
 
@@ -39,18 +43,17 @@ namespace Room_Simulation.Views.GameObjects
 
 
         // METHODS
-        public void serve(int tableNum)
-        {
-           // this.GoTo(x, y);
-        }
 
         public void goToTable(int tableNumb)
         {
             if (!this.moving)
             {
+                this.speed = 10;
+
                 this.targetTable = tableNumb;
+                this.Table = tableNumb;
                 this.isGoingToTable = true;
-                if(this.targetTable < 33 && this.targetTable > 25)
+                if (this.targetTable < 33 && this.targetTable > 25)
                 {
                     if (actualPosition < 34 && actualPosition > 25)
                     {
@@ -505,22 +508,31 @@ namespace Room_Simulation.Views.GameObjects
                         actualPosition = 36;
                     }
                 }
-
             }
         }
 
-        //public void GoToCheckPoint(int Checkpoint)
-        //{
-        //    if (!this.moving)
-        //    {
+        public void Sit(Table table)
+        {
+            if (!this.moving)
+            {
+                int counter = 0;
+                while (!table.chairsList[counter].Available)
+                {
+                    counter++;
+                }
+                table.chairsList[counter].Available = false;
+                this.speed = 1;
+                this.GoTo(table.chairsList[counter].rectangle().X-10, table.chairsList[counter].rectangle().Y-25);
 
-        //    }
-        //}
+            }
+        }
 
         public void returnToExchange()
         {
             if (!this.moving)
             {
+                this.speed = 10;
+
                 isTakingPlate = true;
                 if (actualPosition < 33 && actualPosition > 25)
                 {
@@ -565,7 +577,7 @@ namespace Room_Simulation.Views.GameObjects
                     isTakingPlate = false;
                 }
             }
-            
+
         }
 
         // UPDATE & DRAW
@@ -599,7 +611,7 @@ namespace Room_Simulation.Views.GameObjects
             if (userInput.IsKeyDown(Keys.P))
             {
                 int tab = random.Next(1, 32);
-                goToTable(6);
+                goToTable(tab);
                 oldPosition = targetTable;
             }
             if (userInput.IsKeyDown(Keys.L))
@@ -610,12 +622,12 @@ namespace Room_Simulation.Views.GameObjects
             {
                 returnToExchange();
             }
-            else if(isGoingToTable) // Way to table
+            else if (isGoingToTable) // Way to table
             {
                 goToTable(this.targetTable);
             }
 
-            if(actualPosition == this.oldPosition)
+            if (actualPosition == this.oldPosition)
             {
                 this.oldPosition = -1;
                 RessourcesManager.Sounds["checked"].Play();

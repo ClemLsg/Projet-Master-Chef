@@ -19,13 +19,16 @@ namespace Kitchen_Simulation.Models
 
         public void BringIngredient(Ingredient ingredient, int quantity)
         {
+            this._Model.GetController().Animation("Go to stock");
             this.IsFree = false;
+            this._Model.GetController().Animation("Go to cook");
         }
 
         public void OnNotify(Plate plate)
         {
             if (this.IsFree)
             {
+                this._Model.GetController().Animation("Go to comptoir");
                 //envoyer a la salle (Socket)
             }
 

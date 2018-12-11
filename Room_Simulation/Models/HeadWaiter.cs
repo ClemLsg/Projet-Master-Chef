@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Simulation.Models
 {
-    class HeadWaiter
+    public class HeadWaiter
     {
         public Square square ;
 

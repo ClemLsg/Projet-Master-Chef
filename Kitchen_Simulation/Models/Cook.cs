@@ -25,11 +25,14 @@ namespace Kitchen_Simulation.Models
         private List<Tool> Tools { get; set; }
         public Cleaner Cleaner { get; set; }
 
-        public Cook(List<KitchenClerk> kitchenClerks, List<Tool> tools, Cleaner cleaner)
+        private KitchenModel _Model;
+
+        public Cook(List<KitchenClerk> kitchenClerks, List<Tool> tools, Cleaner cleaner, KitchenModel Model)
         {
             this.KitchenClerks = kitchenClerks;
             this.Tools = tools;
             this.Cleaner = cleaner;
+            this._Model = Model;
         }
 
         private Plate MakeRecipe()

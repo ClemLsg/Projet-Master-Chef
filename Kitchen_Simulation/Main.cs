@@ -20,6 +20,11 @@ namespace Kitchen_Simulation
             Content.RootDirectory = "Content";
         }
 
+        public Simulation GetSimulation()
+        {
+            return this.simulation;
+        }
+
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -32,7 +37,6 @@ namespace Kitchen_Simulation
             ressources = new RessourcesManager();
 
             simulation = new Simulation(); // Initialising the simulation
-
             base.Initialize();
         }
 

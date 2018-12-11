@@ -10,9 +10,11 @@ namespace Kitchen_Simulation.Models
     public class KitchenClerk
     {
         public bool IsFree { get; private set; } = true;
+        private KitchenModel _Model;
 
-        public KitchenClerk()
+        public KitchenClerk(KitchenModel Model)
         {
+            this._Model = Model;
         }
 
         public void BringIngredient(Ingredient ingredient, int quantity)

@@ -1,4 +1,5 @@
 ﻿using System;
+using Kitchen_Simulation.Controllers;
 
 namespace Kitchen_Simulation
 {
@@ -6,16 +7,18 @@ namespace Kitchen_Simulation
     /// <summary>
     /// The main class.
     /// </summary>
-    public static class Program
+    public class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        ///
+
         [STAThread]
         static void Main()
         {
-            using (var game = new Main())
-                game.Run();
+            var controller = new KitchenController();
+            controller.GetView().Run();
         }
     }
 #endif

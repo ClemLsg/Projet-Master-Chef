@@ -12,8 +12,9 @@ namespace Kitchen_Simulation.Models
         private static Chef _instance = null;
         private readonly List<Recipe> _recipePool = new List<Recipe>();
         private readonly List<Cook> _waitingCooks = new List<Cook>();
+        private KitchenModel _Model;
 
-        private Chef() {}
+        private Chef(){}
 
         public static Chef Instance => _instance ?? (_instance = new Chef());
 

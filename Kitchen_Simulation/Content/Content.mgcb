@@ -181,6 +181,30 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Furnitures/chairs.png
 
+#begin Graphics/Furnitures/cooker.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Furnitures/cooker.png
+
+#begin Graphics/Furnitures/dishwasher.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Furnitures/dishwasher.png
+
 #begin Graphics/Furnitures/exchange.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -193,6 +217,30 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Furnitures/exchange.png
 
+#begin Graphics/Furnitures/fridge.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Furnitures/fridge.png
+
+#begin Graphics/Furnitures/sink.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Furnitures/sink.png
+
 #begin Graphics/Furnitures/toilet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -204,6 +252,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Graphics/Furnitures/toilet.png
+
+#begin Graphics/Furnitures/washmachine.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Furnitures/washmachine.png
+
+#begin Graphics/Furnitures/worktable.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphics/Furnitures/worktable.png
 
 #begin Graphics/Tables/table10.png
 /importer:TextureImporter
@@ -385,7 +457,7 @@
 /processorParam:TextureFormat=Color
 /build:Graphics/Workers/chefderang.png
 
-#begin Graphics/Workers/cooker.png
+#begin Graphics/Workers/cook.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -395,7 +467,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Graphics/Workers/cooker.png
+/build:Graphics/Workers/cook.png
 
 #begin Graphics/Workers/hotelmaster.png
 /importer:TextureImporter

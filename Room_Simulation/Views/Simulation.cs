@@ -28,7 +28,6 @@ namespace Room_Simulation.Views
             clients.Add(new Client(0, 0, 1, spriteSizeX, spriteSizeY));
             clients.Add(new Client(0, 0, 2, spriteSizeX, spriteSizeY));
             clients.Add(new Client(0, 0, 3, spriteSizeX, spriteSizeY));
-
         }
 
         //METHODS

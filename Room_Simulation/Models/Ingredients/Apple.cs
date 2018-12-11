@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Room_Simulation.Models.Ingredients
 {
-    public class AppleIngredient
+    public class AppleIngredient : Ingredient
     {
         public override IngredientTypes IngredientTypes => IngredientTypes.Fresh;
     }

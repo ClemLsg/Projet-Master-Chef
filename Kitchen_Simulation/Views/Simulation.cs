@@ -22,7 +22,7 @@ namespace Kitchen_Simulation.Views
         //METHODS
         public void Animation(string Anime)
         {
-            Debug.WriteLine("L\'animation :" + Anime + "à bien été géré par le simulateur ROOM");
+            Debug.WriteLine("L\'animation :" + Anime + "à bien été géré par le simulateur KITCHEN");
         }
         //UPDATE
         public void Update(GameTime gameTime, UserInput userInput)

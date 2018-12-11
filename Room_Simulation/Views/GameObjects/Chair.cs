@@ -11,6 +11,7 @@ namespace Room_Simulation.Views.GameObjects
 {
     public class Chair : GameObjectsBase
     {
+        public bool Available = true;
         public Chair(int x, int y, int index)
             : base(x, y, new AnimatedSprite("chairs", 32, 32, index, SheetOrientation.HORIZONTAL))
         {

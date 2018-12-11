@@ -43,8 +43,6 @@ namespace Kitchen_Simulation
         {
             // TODO: Add your initialization logic here
 
-            simulation = new Simulation(); // Initialising the simulation
-
             base.Initialize();
 
             simulation = new Simulation(); // Initialising the simulation

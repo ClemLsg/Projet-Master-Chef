@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controllers\KitchenController.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Models\Chef.cs" />
     <Compile Include="Models\Cleaner.cs" />

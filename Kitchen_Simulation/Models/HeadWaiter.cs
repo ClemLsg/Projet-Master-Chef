@@ -1,30 +1,31 @@
-﻿using System;
+﻿using Room_Simulation.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Room_Simulation.Models
+namespace Kitchen_Simulation.Models
 {
     class HeadWaiter
     {
         Order ClientOrder = new Order();
 
-        public HeadWaiter( Square square )
+        public HeadWaiter(Square square)
         {
             //Constructor
 
         }
 
-        public static void GiveMenu ()
+        public static void GiveMenu()
         {
 
         }
-        public static TakeOrder(Client)
+        public static TakeOrder(Client client)
         {
-            
+
         }
-        public static BringOrder ()
+        public static BringOrder()
         {
 
         }

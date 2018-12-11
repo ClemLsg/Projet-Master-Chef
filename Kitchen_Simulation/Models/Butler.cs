@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Room_Simulation.Models
+namespace Kitchen_Simulation.Models
 {
-    class Buttler
+    class Butler
     {
     }
 }

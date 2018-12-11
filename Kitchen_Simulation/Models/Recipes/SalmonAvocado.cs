@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Room_Simulation.Models.Ingredients;
+using Kitchen_Simulation.Models;
+using Kitchen_Simulation.Models.Ingredients;
+using Kitchen_Simulation.Models.Recipes;
 
 namespace Room_Simulation.Models.Recipes
 {

@@ -11,6 +11,7 @@ namespace Room_Simulation.Models
         Free,
         Choosing,
         Eating,
-        Dirty
+        Dirty,
+        Cleaned,
     }
 }

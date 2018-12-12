@@ -12,6 +12,7 @@ namespace Kitchen_Simulation.Models
         public Room Room { get; set; }
         public HeadWaiter AssignTable(ClientGroup clientGroup)
         {
+            bool freetable = false;
             foreach (Square square in Room.Squares)
             {
                 foreach (Table table in square.Tables)
@@ -23,11 +24,18 @@ namespace Kitchen_Simulation.Models
                     {
 
                         //Client go to table
+                        freetable = true;
                         return square.HeadWaiters;
+                        
                     }
                     break;
                     
                 }
+            }
+
+            if (freetable == false)
+            {
+                //Client leave the room
             }
             return null;
         }

@@ -1,8 +1,9 @@
 ﻿using Kitchen_Simulation.Views;
+using Kitchen_Simulation.Views.Display;
+using Kitchen_Simulation.Views.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Room_Simulation.Views.Display;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

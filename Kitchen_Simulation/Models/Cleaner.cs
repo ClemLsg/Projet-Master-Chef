@@ -18,19 +18,19 @@ namespace Kitchen_Simulation.Models
         
         public void GetDirtyTools()
         {
-            this.Model.GetController().Animation("Go to cook");
-            this.Model.GetController().Animation("Move to sink");
+            this.Model.GetController().Animation("GoToCookClean");
+            this.Model.GetController().Animation("GoToSinkClean");
         }
 
         public void LaunchDishMachine(List<Tool> tools)
         {
-            this.Model.GetController().Animation("Go to Dish washer");
+            this.Model.GetController().Animation("GoToDishWasherClean");
             this.Model.DishWasher.Wash(tools);
         }
 
         public void LaunchWashingMachine()
         {
-            this.Model.GetController().Animation("Go to Washing machine");
+            this.Model.GetController().Animation("GoToWashingMachineClean");
         }
     }
 }

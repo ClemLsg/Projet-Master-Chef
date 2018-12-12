@@ -133,7 +133,10 @@
     <Compile Include="Views\Display\Sprite.cs" />
     <Compile Include="Views\GameObjects\Chair.cs" />
     <Compile Include="Views\GameObjects\CheckPoint.cs" />
+    <Compile Include="Views\GameObjects\Cleaner.cs" />
+    <Compile Include="Views\GameObjects\Clerk.cs" />
     <Compile Include="Views\GameObjects\Client.cs" />
+    <Compile Include="Views\GameObjects\Cook.cs" />
     <Compile Include="Views\GameObjects\DishWasher.cs" />
     <Compile Include="Views\GameObjects\WashMachine.cs" />
     <Compile Include="Views\GameObjects\WorkTable.cs" />

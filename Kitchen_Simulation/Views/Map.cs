@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Room_Simulation.Views.GameObjects
+namespace Kitchen_Simulation.Views.GameObjects
 {
     public class Map
     {
         //FIELD
         private List<Cooker> cookers;
-        private WorkTable workTable;
-
+        private List<WorkTable> workTables;
+        private Fridge fridge;
+        private DishWasher dishWasher;
+        private WashMachine washMachine;
+        private List<Sink> sinks;
         //CONSTRUCTOR
         public Map()
         {
@@ -24,7 +27,16 @@ namespace Room_Simulation.Views.GameObjects
             cookers.Add(new Cooker(256, 0));
             cookers.Add(new Cooker(384, 0));
             cookers.Add(new Cooker(512, 0));
-            workTable = new WorkTable(640, 0);
+            workTables = new List<WorkTable>();
+            workTables.Add(new WorkTable(640, 0));
+            workTables.Add(new WorkTable(512, 192));
+            workTables.Add(new WorkTable(258, 192));
+            dishWasher = new DishWasher(258, 250);
+            washMachine = new WashMachine(320, 250);
+            fridge = new Fridge(766, 192);
+            sinks = new List<Sink>();
+            sinks.Add(new Sink(384, 250));
+            sinks.Add(new Sink(384 + 192, 250));
 
         }
         //METHODS
@@ -35,7 +47,17 @@ namespace Room_Simulation.Views.GameObjects
             {
                 item.Update(userInput, gameTime);
             }
-            workTable.Update(userInput, gameTime);
+            foreach (var item in workTables)
+            {
+                item.Update(userInput, gameTime);
+            }
+            foreach (var item in sinks)
+            {
+                item.Update(userInput, gameTime);
+            }
+            fridge.Update(userInput, gameTime);
+            dishWasher.Update(userInput, gameTime);
+            washMachine.Update(userInput, gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -44,7 +66,17 @@ namespace Room_Simulation.Views.GameObjects
             {
                 item.Draw(spriteBatch);
             }
-            workTable.Draw(spriteBatch);
+            foreach (var item in workTables)
+            {
+                item.Draw(spriteBatch);
+            }
+            foreach (var item in sinks)
+            {
+                item.Draw(spriteBatch);
+            }
+            fridge.Draw(spriteBatch);
+            dishWasher.Draw(spriteBatch);
+            washMachine.Draw(spriteBatch);
         }
     }
 }

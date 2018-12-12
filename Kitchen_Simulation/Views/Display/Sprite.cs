@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Room_Simulation.Views
+namespace Kitchen_Simulation.Views
 {
     public class Sprite
     {

@@ -1,4 +1,5 @@
-﻿using Kitchen_Simulation.Views;
+﻿using System.Threading;
+using Kitchen_Simulation.Views;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -16,6 +17,7 @@ namespace Kitchen_Simulation
         Simulation simulation;
         KeyboardState oldKeyBoard; // Old keyboard state, used by the UserInput to detect state modification
         MouseState oldMouse; // Old mouse state, used by the UserInput to detect state modification
+        Sleeper sleeper;
 
         public Main()
         {
@@ -26,6 +28,7 @@ namespace Kitchen_Simulation
             this.IsMouseVisible = true;
             graphics.IsFullScreen = false; // C'est degeux en fullscreen mdr, touchez pas a ca XD
             Content.RootDirectory = "Content";
+            sleeper = new Sleeper();
         }
 
         public Simulation GetSimulation()
@@ -81,12 +84,21 @@ namespace Kitchen_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
-            // TODO: Add your update logic here
+            if(this.sleeper.IsPaused)
+                Thread.Sleep(100);
+            else
+            {
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                    Exit();
+                this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
+                // TODO: Add your update logic here
 
-            base.Update(gameTime);
+                base.Update(gameTime);
+
+                if (Keyboard.GetState().IsKeyDown(Keys.P))
+                    this.sleeper.Interval = 10;
+                Thread.Sleep(this.sleeper.Period);
+            }
         }
 
         /// <summary>

@@ -128,6 +128,7 @@
     <Compile Include="Models\WashinMachine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sleeper.cs" />
     <Compile Include="Views\Display\AnimatedSprite.cs" />
     <Compile Include="Views\Display\Sprite.cs" />
     <Compile Include="Views\GameObjects\Chair.cs" />

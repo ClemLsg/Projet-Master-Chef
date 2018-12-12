@@ -18,6 +18,7 @@ namespace Kitchen_Simulation
         static void Main()
         {
             var controller = new KitchenController();
+
             controller.GetView().Run();
         }
     }

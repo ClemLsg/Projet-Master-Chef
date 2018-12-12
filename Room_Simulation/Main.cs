@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Threading;
+using Kitchen_Simulation;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Room_Simulation.Views;
@@ -16,6 +18,7 @@ namespace Room_Simulation
         Simulation simulation;
         KeyboardState oldKeyBoard; // Old keyboard state, used by the UserInput to detect state modification
         MouseState oldMouse; // Old mouse state, used by the UserInput to detect state modification
+        Sleeper sleeper;
 
         public Main()
         {
@@ -29,6 +32,8 @@ namespace Room_Simulation
 
             //POINTING Content to ressources folder
             Content.RootDirectory = "Content";
+            
+            sleeper = new Sleeper();
         }
 
         /// <summary>
@@ -76,12 +81,24 @@ namespace Room_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            if(!this.IsActive)
+                Thread.Sleep(100);
+            else
+            {
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                    Exit();
 
-            // TODO: Add your update logic here
-            this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
-            base.Update(gameTime);
+                // TODO: Add your update logic here
+                this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
+                base.Update(gameTime);
+
+                if (Keyboard.GetState().IsKeyDown(Keys.I))
+                {
+                    this.sleeper.IsPaused = true;
+                }
+            
+                Thread.Sleep(this.sleeper.Period);              
+            }
         }
 
         /// <summary>
@@ -90,7 +107,6 @@ namespace Room_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-
             GraphicsDevice.Clear(Color.DarkGray);
             spriteBatch.Begin();
             // TODO: Add your drawing code here

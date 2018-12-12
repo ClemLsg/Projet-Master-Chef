@@ -10,7 +10,7 @@ namespace Room_Simulation.Models.Recipes
 {
     class SugarStrawberry : Recipe
     {
-        public override RecipeTypes RecipeTypes => RecipeTypes.Starter;
+        public override RecipeTypes RecipeTypes => RecipeTypes.Dessert;
         protected override void CreateTools()
         {
             this.Tools.Add(new Louche());

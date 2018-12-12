@@ -10,7 +10,7 @@ namespace Room_Simulation.Models.Recipes
 {
     class ForestChicken : Recipe
     {
-        public override RecipeTypes RecipeTypes => RecipeTypes.Starter;
+        public override RecipeTypes RecipeTypes => RecipeTypes.Main;
         protected override void CreateTools()
         {
             this.Tools.Add(new Louche());

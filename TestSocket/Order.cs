@@ -1,8 +1,5 @@
-using System;
-
 namespace Room_Simulation.Models
 {
-    [Serializable]
     public class Order
     {
         public string Starter { get; set; }

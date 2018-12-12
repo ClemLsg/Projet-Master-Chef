@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 
 namespace Room_Simulation.Models
 {
+
     public class Room
     {
         //FIELDS

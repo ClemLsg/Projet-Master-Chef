@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Kitchen_Simulation.Models.Tools;
 
@@ -19,19 +20,20 @@ namespace Kitchen_Simulation.Models
 
         public void BringIngredient(Ingredient ingredient, int quantity)
         {
-            this._Model.GetController().Animation("Go to stock");
+            this._Model.GetController().Animation("GoToStockCom");
             this.IsFree = false;
-            this._Model.GetController().Animation("Go to cook");
+            this._Model.GetController().Animation("GoToCookCom");
         }
 
         public void OnNotify(Plate plate)
         {
             if (this.IsFree)
             {
-                this._Model.GetController().Animation("Go to comptoir");
-                //envoyer a la salle (Socket)
+                this._Model.GetController().Animation("GoToExCom");
+                NetworkManager.StartClient(plate);
             }
 
         }
+
     }
 }

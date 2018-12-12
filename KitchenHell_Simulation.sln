@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Room_Simulation", "Room_Sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenTests", "KitchenTests\KitchenTests.csproj", "{37613032-2262-4C71-8658-BAC741E823F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSocket", "TestSocket\TestSocket.csproj", "{5011C52A-7D3B-4F66-B097-F4FC9EED6145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,14 @@ Global
 		{37613032-2262-4C71-8658-BAC741E823F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{37613032-2262-4C71-8658-BAC741E823F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{37613032-2262-4C71-8658-BAC741E823F8}.Release|x86.Build.0 = Release|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Debug|x86.Build.0 = Debug|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Release|x86.ActiveCfg = Release|Any CPU
+		{5011C52A-7D3B-4F66-B097-F4FC9EED6145}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

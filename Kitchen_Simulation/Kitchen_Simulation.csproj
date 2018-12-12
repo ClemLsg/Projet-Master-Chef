@@ -126,6 +126,7 @@
     <Compile Include="Models\Tools\Louche.cs" />
     <Compile Include="Models\Tools\Tool.cs" />
     <Compile Include="Models\WashinMachine.cs" />
+    <Compile Include="NetworkManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sleeper.cs" />

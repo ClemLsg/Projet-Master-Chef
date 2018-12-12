@@ -12,13 +12,13 @@ namespace Room_Simulation.Models
         {
             //Constructor
         }
-        public static void ServeOrder(Table table)
+        public void ServeOrder(ClientGroup clientGroup)
         {
-            // the waiter go to the table and serve the plate just cooked to client
-            table.TableStatus = TableStatus.Eating;
+            // the waiter go to the table and serve the starter, main and dessert to everyone
+            clientGroup.table.TableStatus = TableStatus.Eating;
 
         }
-        public static void CLeanTable (Table table)
+        public void CLeanTable (Table table)
         {
             // THe Waiter clean the table
             if(table.TableStatus == TableStatus.Dirty)

@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>6</LangVersion>
+    <LangVersion>7.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,6 +34,7 @@
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
@@ -72,6 +73,7 @@
     <Compile Include="Models\Recipes\RecipeTypes.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomClerk.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Models\SQLConnector.cs" />
     <Compile Include="Models\Square.cs" />
     <Compile Include="Models\Table.cs" />

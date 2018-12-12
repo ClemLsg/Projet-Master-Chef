@@ -18,17 +18,12 @@ namespace Kitchen_Simulation.Models
                 foreach (Table table in square.Tables)
                 {
                     if (table.TableStatus == TableStatus.Free && table.Seats >= clientGroup.Clients.Count())
-
-                    table.ClientsGroup = clientGroup;
-                    foreach (Client client in table.ClientsGroup.Clients)
-                    {
-
-                        //Client go to table
+                    { //Client go to table
                         freetable = true;
+                        clientGroup.table = table;
+                        table.ClientsGroup = clientGroup;
                         return square.HeadWaiters;
-                        
                     }
-                    break;
                     
                 }
             }

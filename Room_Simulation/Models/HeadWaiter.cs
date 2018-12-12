@@ -20,7 +20,14 @@ namespace Kitchen_Simulation.Models
         public void GiveMenu(Table table)
         {
             //Headwaiter give a menu to the client group
+            foreach (Client client in table.ClientsGroup.Clients)
+            {
+
+                //Client go to their table with HeadWaiter
+
+            }
             table.TableStatus = TableStatus.Choosing;
+            
         }
         public Order TakeOrder(Client client)
         {

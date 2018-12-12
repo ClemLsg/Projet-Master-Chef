@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Room_Simulation.Views.GameObjects
+namespace Kitchen_Simulation.Views.GameObjects
 {
     public abstract class GameObjectsBase
     {

@@ -15,7 +15,7 @@ namespace Kitchen_Simulation.Views.GameObjects
 
         //CONSTRUCTOR
         public WashMachine(int x, int y)
-            : base(x, y, new Sprite("WashMachine", x, y))
+            : base(x, y, new Sprite("washmachine", x, y))
         {
 
         }

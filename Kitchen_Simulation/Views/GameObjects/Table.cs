@@ -1,12 +1,14 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Kitchen_Simulation.Views.GameObjects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Room_Simulation.Views.GameObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Room_Simulation.Views.GameObjects
+namespace Kitchen_Simulation.Views.GameObjects
 {
     public class Table : GameObjectsBase
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Room_Simulation.Models
 {
-   
+
     class RoomClerk
     {
         public List<Square> Squares { get; set; }
@@ -18,18 +18,18 @@ namespace Room_Simulation.Models
 
         public void serveBread()
         {
-            foreach(Square square in Squares)
+            foreach (Square square in Squares)
             {
                 foreach (Table table in square.Tables)
                 {
-                    if(!table.HasBread)
+                    if (!table.HasBread)
                     {
                         //RoomClerk go to the table and serve bread on the table
                         table.HasBread = true;
                     }
                 }
             }
-            
+
         }
 
         public void serveDrink()
@@ -47,7 +47,7 @@ namespace Room_Simulation.Models
             }
         }
 
-        
+
 
 
     }

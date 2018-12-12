@@ -71,6 +71,7 @@
     <Compile Include="Models\Recipes\Recipe.cs" />
     <Compile Include="Models\Recipes\RecipeTypes.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomClerk.cs" />
     <Compile Include="Models\SQLConnector.cs" />
     <Compile Include="Models\Square.cs" />
     <Compile Include="Models\Table.cs" />

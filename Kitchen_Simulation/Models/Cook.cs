@@ -10,12 +10,13 @@ namespace Kitchen_Simulation.Models
 {
     public class Cook
     {
+        public Recipe _cookingRecipe;
         public Recipe CookingRecipe
         {
-            private get { return CookingRecipe; }
+            private get { return _cookingRecipe; }
             set
             {
-                CookingRecipe = value;
+                _cookingRecipe = value;
                 NotifyKitchenClerk(this.MakeRecipe());
                 NotifyChef("Order completed", this);
             }

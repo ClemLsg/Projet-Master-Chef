@@ -23,10 +23,12 @@ namespace Kitchen_Simulation.Models
         }
         public Order TakeOrder(Client client)
         {
+            //On the IHM Give men to CLient
             return client.AOrder;
         }
         public Order BringOrder(Order order)
         {
+            //On the IHM the HeadWaiter bring the order to the chef
             return order;
         }
         public  void SwitchSquare(Square NewSquare)

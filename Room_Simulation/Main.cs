@@ -42,6 +42,14 @@ namespace Room_Simulation
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
+        /// 
+
+        public Simulation GetSimulation()
+        {
+            return this.simulation;
+        }
+
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here

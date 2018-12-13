@@ -10,6 +10,7 @@ namespace Kitchen_Simulation.Models
     public class HeadWaiter
     {
         public Square square;
+        Room_Simulation.Controlers.RoomController controller = new Room_Simulation.Controlers.RoomController();
 
         public HeadWaiter(Square square)
         {
@@ -19,11 +20,11 @@ namespace Kitchen_Simulation.Models
 
         public void GiveMenu(Table table)
         {
-            //Headwaiter give a menu to the client group
+            this.controller.Animation("Headwaiter give a menu to the client group");
             foreach (Client client in table.ClientsGroup.Clients)
             {
 
-                //Client go to their table with HeadWaiter
+                this.controller.Animation("Client go to their table with HeadWaiter");
 
             }
             table.TableStatus = TableStatus.Choosing;
@@ -31,12 +32,12 @@ namespace Kitchen_Simulation.Models
         }
         public Order TakeOrder(Client client)
         {
-            //On the IHM Give men to CLient
+            controller.Animation("HeadWaiter go to the client table")
             return client.AOrder;
         }
         public Order BringOrder(Order order)
         {
-            //On the IHM the HeadWaiter bring the order to the chef
+            controller.Animation("HeadWaiter bring the order to the chef (bar)");
             return order;
         }
         public  void SwitchSquare(Square NewSquare)

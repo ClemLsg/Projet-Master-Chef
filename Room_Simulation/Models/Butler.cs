@@ -10,6 +10,8 @@ namespace Kitchen_Simulation.Models
     class Butler
     {
         public Room Room { get; set; }
+
+        Room_Simulation.Controlers.RoomController controlers = new Room_Simulation.Controlers.RoomController();
         public HeadWaiter AssignTable(ClientGroup clientGroup)
         {
             bool freetable = false;
@@ -18,11 +20,13 @@ namespace Kitchen_Simulation.Models
                 foreach (Table table in square.Tables)
                 {
                     if (table.TableStatus == TableStatus.Free && table.Seats >= clientGroup.Clients.Count())
-                    { //Client go to table
+                    {
+                        this.controlers.Animation("Client go to table with the headwaiter");
                         freetable = true;
                         clientGroup.table = table;
                         table.ClientsGroup = clientGroup;
-                        return square.HeadWaiters;
+                        HeadWaiter headWaiter = square.HeadWaiters;
+                        return headWaiter;
                     }
                     
                 }
@@ -30,7 +34,7 @@ namespace Kitchen_Simulation.Models
 
             if (freetable == false)
             {
-                //Client leave the room
+                this.controlers.Animation("Client leave the room");
             }
             return null;
         }

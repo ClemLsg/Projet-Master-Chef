@@ -35,10 +35,10 @@ namespace Room_Simulation.Models
             controller.Animation("HeadGoToTable " + table.square.HeadWaiters.HeadWaiterID.ToString() + "TO " + table.IDTable.ToString()); // Wich headwaiter ? Wich Table ? TODO
             return client.AOrder;
         }
-        public Order BringOrder(Client client, Table table)
+        public Order BringOrder(Order order, Table table)
         {
             controller.Animation("HeadGoToExchange " + table.square.HeadWaiters.HeadWaiterID.ToString()); // Wich Headwaiter ? TODO
-            return client.AOrder;
+            return order;
         }
         public  void SwitchSquare(Square NewSquare)
         {

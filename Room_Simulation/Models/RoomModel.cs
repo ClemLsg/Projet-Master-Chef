@@ -95,7 +95,7 @@ namespace Room_Simulation.Models
                     {
 
                         Order order = headwaiter.TakeOrder(c, cg.table);
-                        headwaiter.BringOrder(c, cg.table);
+                        headwaiter.BringOrder(order, cg.table);
                     }
                     //Send order by sockets
                 }

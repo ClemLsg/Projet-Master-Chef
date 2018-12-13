@@ -26,7 +26,7 @@ namespace Room_Simulation.Models
                 {
                     if (!table.HasBread)
                     {
-                        controller.Animation("RoomClerk go to the table and serve bread on the table");
+                        controller.Animation("ClerkGoToTableBread"); // Wich table ? TODO
                         table.HasBread = true;
                     }
                 }
@@ -42,7 +42,7 @@ namespace Room_Simulation.Models
                 {
                     if (!table.HasWater)
                     {
-                        controller.Animation("RoomClerk go to the table and serve water on the table");
+                        controller.Animation("ClerkGoToTableWater"); // Wich table ? TODO
                         table.HasWater = true;
                     }
                 }

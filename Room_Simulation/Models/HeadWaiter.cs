@@ -20,11 +20,11 @@ namespace Kitchen_Simulation.Models
 
         public void GiveMenu(Table table)
         {
-            this.controller.Animation("Headwaiter give a menu to the client group");
+            this.controller.Animation("GiveMenu"); // Wich table ? TODO
             foreach (Client client in table.ClientsGroup.Clients)
             {
 
-                this.controller.Animation("Client go to their table with HeadWaiter");
+                this.controller.Animation("ClientGoTable"); // Wich table ? TODO
 
             }
             table.TableStatus = TableStatus.Choosing;
@@ -32,12 +32,12 @@ namespace Kitchen_Simulation.Models
         }
         public Order TakeOrder(Client client)
         {
-            controller.Animation("HeadWaiter go to the client table")
+            controller.Animation("HeadGoToTable"); // Wich headwaiter ? Wich Table ? TODO
             return client.AOrder;
         }
         public Order BringOrder(Order order)
         {
-            controller.Animation("HeadWaiter bring the order to the chef (bar)");
+            controller.Animation("HeadGoToExchange"); // Wich Headwaiter ? TODO
             return order;
         }
         public  void SwitchSquare(Square NewSquare)

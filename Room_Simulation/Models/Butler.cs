@@ -21,7 +21,7 @@ namespace Kitchen_Simulation.Models
                 {
                     if (table.TableStatus == TableStatus.Free && table.Seats >= clientGroup.Clients.Count())
                     {
-                        this.controlers.Animation("Client go to table with the headwaiter");
+                        this.controlers.Animation("ClientGoTo"); // wich table ? TODO
                         freetable = true;
                         clientGroup.table = table;
                         table.ClientsGroup = clientGroup;
@@ -34,7 +34,7 @@ namespace Kitchen_Simulation.Models
 
             if (freetable == false)
             {
-                this.controlers.Animation("Client leave the room");
+                this.controlers.Animation("ClientLeave"); // wich client ? TODO
             }
             return null;
         }

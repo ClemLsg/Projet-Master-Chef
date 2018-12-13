@@ -12,9 +12,9 @@ namespace Room_Simulation.Models
 
         public void Pay()
         {
-            this.controlers.Animation("Client go to bar");
-            this.controlers.Animation("Client pay");
-            this.controlers.Animation("Client leave the room");
+            this.controlers.Animation("ClientGoToEx"); // TODO WICH CLIENT ? TODO
+            this.controlers.Animation("ClientPay"); // WIIIIIICH CLIENT ? TODO
+            this.controlers.Animation("ClientLeave"); // WIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIICH ???????????????????????????? TODO
 
         }
 
@@ -25,15 +25,16 @@ namespace Room_Simulation.Models
 
         public void Arrives()
         {
-            this.controlers.Animation("Arrives at room");
+            this.controlers.Animation("ClientSpawn"); // Give me the client id please TODO
         }
 
         public void Eat()
         {
             IsServed = true;
 
-            this.controlers.Animation("Client is eating");
-            this.controlers.Animation("Dish finished");
+            this.controlers.Animation("ClientEat"); // WIIIIIICH TODO
+
+            this.controlers.Animation("ClientFinishEat"); // WIIIIICH TODO
         }
 
     }

@@ -22,7 +22,8 @@ namespace Kitchen_Simulation.Models
                         freetable = true;
                         clientGroup.table = table;
                         table.ClientsGroup = clientGroup;
-                        return square.HeadWaiters;
+                        HeadWaiter headWaiter = square.HeadWaiters;
+                        return headWaiter;
                     }
                     
                 }

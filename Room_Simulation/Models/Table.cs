@@ -29,6 +29,11 @@ namespace Room_Simulation.Models
         {
             return this.ClientsGroup;
         }
+
+        public void IsDirty()
+        {
+            TableStatus = TableStatus.Dirty;
+        }
     }
 
 }

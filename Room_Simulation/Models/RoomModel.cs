@@ -27,12 +27,31 @@ namespace Room_Simulation.Models
             clients.Add(client);
             clients.Add(client2);
             clients.Add(client3);
-            
 
+            Square square = new Square();
+            Square square2 = new Square();
+
+            Table table = new Table(5);
+            Table table2 = new Table(10);
+
+            HeadWaiter headWaiter1 = new HeadWaiter(square);
+            HeadWaiter headWaiter2 = new HeadWaiter(square2);
+
+            square.HeadWaiters = headWaiter1;
+            square2.HeadWaiters = headWaiter2;
+
+            square.AddTables(table);
+            square2.AddTables(table2);
+            squares.Add(square);
+            squares.Add(square2);
+            Room room = new Room();
+            room.AddSquare(square);
+            room.AddSquare(square2);
 
             ClientGroup clientGroup = new ClientGroup(clients, 10, 10, 10);
             clientGroups.Add(clientGroup);
             Butler butler = new Butler();
+            butler.Room = room;
 
             
 
@@ -53,8 +72,9 @@ namespace Room_Simulation.Models
                     HeadWaiter headwaiter = butler.AssignTable(cg);
                     headwaiter.GiveMenu(cg.table);
 
-                    Thread.Sleep(300000);
-
+                    
+                   //Thread.Sleep(300000);
+                    
                     foreach (Client c in cg.Clients)
                     {
 
@@ -65,13 +85,13 @@ namespace Room_Simulation.Models
                 }
 
                 Square tablesquare = new Square();
-                foreach (Square square in squares)
+                foreach (Square sq in squares)
                 {
-                    foreach (Table t in square.Tables)
+                    foreach (Table t in sq.Tables)
                     {
                         if (t == cg.table)
                         {
-                            tablesquare = square;
+                            tablesquare = sq;
                         }
                     }
 
@@ -81,9 +101,10 @@ namespace Room_Simulation.Models
                     waiter.ServeOrder(cg);
                     int totaltime = cg.TimeToEatStarter + cg.TimeToEatMain + cg.TimeToEatDessert;
 
-                    Thread.Sleep(totaltime);
+                    //Thread.Sleep(totaltime);
 
                     client.Pay();
+                    table.IsDirty();
                     waiter.CLeanTable(cg.table);
 
                 }

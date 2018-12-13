@@ -15,6 +15,7 @@ namespace Room_Simulation.Models
             //Client go to bar
             //Client pay
             //Client leave the room 
+            
         }
 
         public void MakeAnOrder(string starter, string main, string dessert)

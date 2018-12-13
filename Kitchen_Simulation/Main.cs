@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.Diagnostics;
+using System.Threading;
 using Kitchen_Simulation.Views;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -83,21 +84,24 @@ namespace Kitchen_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if(this.sleeper.IsPaused)
-                Thread.Sleep(100);
+            UserInput input = new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState());
+            if (this.sleeper.IsPaused)
+            {
+                if (input.IsKeyGetPressed(Keys.Space))
+                {
+                    this.sleeper.IsPaused = !this.sleeper.IsPaused;
+                }
+            }
             else
             {
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                    Exit();
-                this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
-                // TODO: Add your update logic here
-
+                if (input.IsKeyGetPressed(Keys.Space))
+                {
+                    this.sleeper.IsPaused = !this.sleeper.IsPaused;
+                }
+                this.simulation.Update(gameTime, input);
                 base.Update(gameTime);
-
-                if (Keyboard.GetState().IsKeyDown(Keys.P))
-                    this.sleeper.Interval = 10;
-                Thread.Sleep(this.sleeper.Period);
             }
+            Debug.WriteLine(this.sleeper.IsPaused);
         }
 
         /// <summary>

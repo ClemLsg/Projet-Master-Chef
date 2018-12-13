@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Kitchen_Simulation.Views
 {
@@ -69,6 +70,7 @@ namespace Kitchen_Simulation.Views
         //UPDATE
         public void Update(GameTime gameTime, UserInput userInput)
         {
+
             map.Update(userInput, gameTime);
             clerk.Update(userInput, gameTime);
             cook.Update(userInput, gameTime);

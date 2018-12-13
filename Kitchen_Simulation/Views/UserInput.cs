@@ -42,5 +42,15 @@ namespace Kitchen_Simulation.Views
         {
             return this.keyboard.IsKeyDown(key);
         }
+
+        public bool IsKeyUp(Keys key) // IS THIS KEY UP ?
+        {
+            return this.keyboard.IsKeyUp(key);
+        }
+
+        public bool IsKeyGetPressed(Keys key)
+        {
+            return this.keyboard.IsKeyUp(key) && this.oldKeyBoard.IsKeyDown(key);
+        }
     }
 }

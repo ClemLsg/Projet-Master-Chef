@@ -40,7 +40,7 @@ namespace Room_Simulation.Controlers
 
         public void Animation(string name)
         {
-            this.GetView().Animation(name);
+            this.GetView().GetSimulation().Animation(name);
         }
     }
 }

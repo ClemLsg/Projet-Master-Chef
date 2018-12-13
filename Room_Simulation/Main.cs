@@ -89,24 +89,10 @@ namespace Room_Simulation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if(!this.IsActive)
-                Thread.Sleep(100);
-            else
-            {
-                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                    Exit();
 
-                // TODO: Add your update logic here
                 this.simulation.Update(gameTime, new UserInput(this.oldKeyBoard, this.oldMouse, this.oldKeyBoard = Keyboard.GetState(), this.oldMouse = Mouse.GetState()));
                 base.Update(gameTime);
 
-                if (Keyboard.GetState().IsKeyDown(Keys.I))
-                {
-                    this.sleeper.IsPaused = true;
-                }
-            
-                Thread.Sleep(this.sleeper.Period);              
-            }
         }
 
         /// <summary>

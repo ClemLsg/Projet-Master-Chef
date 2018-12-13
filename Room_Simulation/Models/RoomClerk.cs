@@ -42,7 +42,7 @@ namespace Room_Simulation.Models
                 {
                     if (!table.HasWater)
                     {
-                        controller.Animation("ClerkGoToTableWater"); // Wich table ? TODO
+                        controller.Animation("ClerkGoToTableWater " + table.IDTable.ToString()); // Wich table ? TODO
                         table.HasWater = true;
                     }
                 }

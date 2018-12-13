@@ -12,7 +12,7 @@ namespace Kitchen_Simulation.Models
         public Room Room { get; set; }
 
         Room_Simulation.Controlers.RoomController controlers = new Room_Simulation.Controlers.RoomController();
-        public HeadWaiter AssignTable(ClientGroup clientGroup)
+        public HeadWaiter AssignTable(ClientGroup clientGroup, Table _table)
         {
             bool freetable = false;
             foreach (Square square in Room.Squares)
@@ -21,7 +21,7 @@ namespace Kitchen_Simulation.Models
                 {
                     if (table.TableStatus == TableStatus.Free && table.Seats >= clientGroup.Clients.Count())
                     {
-                        this.controlers.Animation("ClientGoTo"); // wich table ? TODO
+                        this.controlers.Animation("ClientGoTo " + _table.IDTable.ToString()); // wich table ? TODO
                         freetable = true;
                         clientGroup.table = table;
                         table.ClientsGroup = clientGroup;
@@ -34,7 +34,7 @@ namespace Kitchen_Simulation.Models
 
             if (freetable == false)
             {
-                this.controlers.Animation("ClientLeave"); // wich client ? TODO
+                this.controlers.Animation("ClientsLeave " + clientGroup.ClientGroupID.ToString()); // wich client ? TODO
             }
             return null;
         }

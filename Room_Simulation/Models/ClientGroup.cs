@@ -4,6 +4,7 @@ namespace Room_Simulation.Models
 {
     public class ClientGroup
     {
+        public int ClientGroupID { get; set; }
         public List<Client> Clients { get; set; }
         public int TimeToEatStarter { get; set; }
         public int TimeToEatMain { get; set; }

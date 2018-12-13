@@ -8,6 +8,7 @@ namespace Room_Simulation.Models
         public bool HasBread { get; set; }
         public bool HasWater { get; set; }
         public TableStatus TableStatus { get; set; }
+        public Square square { get; set; }
 
         public ClientGroup ClientsGroup { get; set; }
         

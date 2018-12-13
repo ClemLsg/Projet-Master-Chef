@@ -34,9 +34,9 @@ namespace Room_Simulation.Models
             List<ClientGroup> clientGroups = new List<ClientGroup>();
             List<Square> squares = new List<Square>();
             List<Client> clients = new List<Client>();
-            Client client = new Client(this.GetController());
-            Client client2 = new Client(this.GetController());
-            Client client3 = new Client(this.GetController());
+            Client client = new Client();
+            Client client2 = new Client();
+            Client client3 = new Client();
             client.MakeAnOrder("HardEgg", "Tartiflette", "BananaSplit");
             client2.MakeAnOrder("Gaspatcho", "ForestChicken", "FruitsSalad");
             client3.MakeAnOrder("TomatoSoup", "Omelette", "BananaSplit");
@@ -85,7 +85,7 @@ namespace Room_Simulation.Models
             {
                 if (cg.Seated == false)
                 {
-                    HeadWaiter headwaiter = butler.AssignTable(cg);
+                    HeadWaiter headwaiter = butler.AssignTable(cg, cg.table);
                     headwaiter.GiveMenu(cg.table);
 
                     
@@ -94,8 +94,8 @@ namespace Room_Simulation.Models
                     foreach (Client c in cg.Clients)
                     {
 
-                        Order order = headwaiter.TakeOrder(c);
-                        headwaiter.BringOrder(order);
+                        Order order = headwaiter.TakeOrder(c, cg.table);
+                        headwaiter.BringOrder(c, cg.table);
                     }
                     //Send order by sockets
                 }

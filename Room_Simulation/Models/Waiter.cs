@@ -17,7 +17,8 @@ namespace Room_Simulation.Models
         }
         public void ServeOrder(ClientGroup clientGroup)
         {
-            controller.Animation("WaiterServe"); // table ? TODO
+            
+            controller.Animation("WaiterServe " + clientGroup.table.IDTable.ToString()); // table ? TODO
             clientGroup.table.TableStatus = TableStatus.Eating;
         }
         public void CLeanTable (Table table)

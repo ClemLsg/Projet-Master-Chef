@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kitchen_Simulation.Models
+namespace Room_Simulation.Models
 {
     public class HeadWaiter
     {

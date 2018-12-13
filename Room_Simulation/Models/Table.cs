@@ -18,7 +18,6 @@ namespace Room_Simulation.Models
         }
         public void AddClient(ClientGroup client)
         {
-            //The HeadWaiter bring the client to the table
             this.ClientsGroup = client;
         }
         public void RemoveClient (Client client)

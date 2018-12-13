@@ -4,7 +4,7 @@ namespace Room_Simulation.Models
     {
         public bool IsServed { get; set; }
         public Order AOrder { get; set; }
-        
+        Controlers.RoomController controlers = new Controlers.RoomController();
         public Client()
         {
 
@@ -12,10 +12,10 @@ namespace Room_Simulation.Models
 
         public void Pay()
         {
-            //Client go to bar
-            //Client pay
-            //Client leave the room 
-            
+            this.controlers.Animation("Client go to bar");
+            this.controlers.Animation("Client pay");
+            this.controlers.Animation("Client leave the room");
+
         }
 
         public void MakeAnOrder(string starter, string main, string dessert)
@@ -25,15 +25,15 @@ namespace Room_Simulation.Models
 
         public void Arrives()
         {
-            //Client arrives at the room
+            this.controlers.Animation("Arrives at room");
         }
 
         public void Eat()
         {
             IsServed = true;
-            
-            //Client is eating
-            //Dish finished
+
+            this.controlers.Animation("Client is eating");
+            this.controlers.Animation("Dish finished");
         }
 
     }

@@ -11,6 +11,8 @@ namespace Room_Simulation.Models
     {
         public List<Square> Squares { get; set; }
         public static RoomClerk UniqueInstance { get; set; }
+        Room_Simulation.Controlers.RoomController controller = new Room_Simulation.Controlers.RoomController();
+
         public RoomClerk(List<Square> squares)
         {
             this.Squares = squares;
@@ -24,7 +26,7 @@ namespace Room_Simulation.Models
                 {
                     if (!table.HasBread)
                     {
-                        //RoomClerk go to the table and serve bread on the table
+                        controller.Animation("RoomClerk go to the table and serve bread on the table");
                         table.HasBread = true;
                     }
                 }
@@ -40,7 +42,7 @@ namespace Room_Simulation.Models
                 {
                     if (!table.HasWater)
                     {
-                        //RoomClerk go to the table and serve water on the table
+                        controller.Animation("RoomClerk go to the table and serve water on the table");
                         table.HasWater = true;
                     }
                 }

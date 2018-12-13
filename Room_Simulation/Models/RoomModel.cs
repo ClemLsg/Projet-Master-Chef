@@ -115,6 +115,7 @@ namespace Room_Simulation.Models
                     Waiter waiter = new Waiter(tablesquare);
                     //Receive recipes by sockets
                     waiter.ServeOrder(cg);
+                    client.Eat();
                     int totaltime = cg.TimeToEatStarter + cg.TimeToEatMain + cg.TimeToEatDessert;
 
                     //Thread.Sleep(totaltime);

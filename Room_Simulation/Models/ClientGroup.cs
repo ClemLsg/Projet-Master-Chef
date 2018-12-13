@@ -8,6 +8,9 @@ namespace Room_Simulation.Models
         public int TimeToEatStarter { get; set; }
         public int TimeToEatMain { get; set; }
         public int TimeToEatDessert { get; set; }
+        public Table table { get; set; }
+
+        public bool Seated { get; set; }
         
         public ClientGroup(List<Client> clients, int timeToEatStarter, int timeToEatMain, int timeToEatDessert)
         {

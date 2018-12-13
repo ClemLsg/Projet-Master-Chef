@@ -1,4 +1,5 @@
 using Room_Simulation.Models;
+using Kitchen_Simulation;
 
 
 
@@ -16,7 +17,6 @@ namespace Room_Simulation.Models
         {
             // the waiter go to the table and serve the starter, main and dessert to everyone
             clientGroup.table.TableStatus = TableStatus.Eating;
-
         }
         public void CLeanTable (Table table)
         {

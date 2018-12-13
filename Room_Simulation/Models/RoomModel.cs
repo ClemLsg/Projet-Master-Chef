@@ -34,55 +34,58 @@ namespace Room_Simulation.Models
             clientGroups.Add(clientGroup);
             Butler butler = new Butler();
 
-            Thread threadManage = new Thread(ManageClient);
-            threadManage.Start();
+            
 
             Thread threadWaterBread = new Thread(NeedWaterBread);
             threadWaterBread.Start();
 
-            void ManageClient()
+            foreach (ClientGroup cg in clientGroups)
             {
-                foreach (ClientGroup cg in clientGroups)
+                Thread threadManage = new Thread(() => ManageClient(cg));
+                threadManage.Start();
+            }
+
+
+            void ManageClient(ClientGroup cg)
+            {
+                if (cg.Seated == false)
                 {
-                    if (cg.Seated == false)
+                    HeadWaiter headwaiter = butler.AssignTable(cg);
+                    headwaiter.GiveMenu(cg.table);
+
+                    Thread.Sleep(300000);
+
+                    foreach (Client c in cg.Clients)
                     {
-                        HeadWaiter headwaiter = butler.AssignTable(cg);
-                        headwaiter.GiveMenu(cg.table);
 
-                        Thread.Sleep(300000);
+                        Order order = headwaiter.TakeOrder(c);
+                        headwaiter.BringOrder(order);
+                    }
+                    //Send order by sockets
+                }
 
-                        foreach (Client c in cg.Clients)
+                Square tablesquare = new Square();
+                foreach (Square square in squares)
+                {
+                    foreach (Table t in square.Tables)
+                    {
+                        if (t == cg.table)
                         {
-
-                            Order order = headwaiter.TakeOrder(c);
-                            headwaiter.BringOrder(order);
+                            tablesquare = square;
                         }
-                        //Send order by sockets
                     }
 
-                    Square tablesquare = new Square();
-                    foreach (Square square in squares)
-                    {
-                        foreach (Table t in square.Tables)
-                        {
-                            if (t == cg.table)
-                            {
-                                tablesquare = square;
-                            }
-                        }
 
+                    Waiter waiter = new Waiter(tablesquare);
+                    //Receive recipes by sockets
+                    waiter.ServeOrder(cg);
+                    int totaltime = cg.TimeToEatStarter + cg.TimeToEatMain + cg.TimeToEatDessert;
 
-                        Waiter waiter = new Waiter(tablesquare);
-                        //Receive recipes by sockets
-                        waiter.ServeOrder(cg);
-                        int totaltime = cg.TimeToEatStarter + cg.TimeToEatMain + cg.TimeToEatDessert;
+                    Thread.Sleep(totaltime);
 
-                        Thread.Sleep(totaltime);
+                    client.Pay();
+                    waiter.CLeanTable(cg.table);
 
-                        client.Pay();
-                        waiter.CLeanTable(cg.table);
-
-                    }
                 }
             }
 

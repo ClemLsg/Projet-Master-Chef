@@ -1,4 +1,5 @@
 ﻿using Kitchen_Simulation.Models;
+using Room_Simulation.Controlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,32 @@ namespace Room_Simulation.Models
 {
     class RoomModel
     {
+        private RoomController _Controller;
+
+        public RoomModel(RoomController controller)
+        {
+            this.SetController(controller);
+            this.Main();
+        }
+
+        internal RoomController GetController()
+        {
+            return _Controller;
+        }
+
+        internal void SetController(RoomController value)
+        {
+            _Controller = value;
+        }
+
         public void Main()
         {
-
-            
-
             List<ClientGroup> clientGroups = new List<ClientGroup>();
             List<Square> squares = new List<Square>();
             List<Client> clients = new List<Client>();
-            Client client = new Client();
-            Client client2 = new Client();
-            Client client3 = new Client();
+            Client client = new Client(this.GetController());
+            Client client2 = new Client(this.GetController());
+            Client client3 = new Client(this.GetController());
             client.MakeAnOrder("HardEgg", "Tartiflette", "BananaSplit");
             client2.MakeAnOrder("Gaspatcho", "ForestChicken", "FruitsSalad");
             client3.MakeAnOrder("TomatoSoup", "Omelette", "BananaSplit");

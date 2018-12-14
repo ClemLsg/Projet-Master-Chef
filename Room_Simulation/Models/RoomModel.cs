@@ -1,5 +1,6 @@
 ﻿using Kitchen_Simulation.Models;
 using Room_Simulation.Controlers;
+using Supervision;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,9 @@ namespace Room_Simulation.Models
 
         public void Main()
         {
+
+   
+
             List<ClientGroup> clientGroups = new List<ClientGroup>();
             List<Square> squares = new List<Square>();
             List<Client> clients = new List<Client>();
@@ -43,6 +47,7 @@ namespace Room_Simulation.Models
             clients.Add(client);
             clients.Add(client2);
             clients.Add(client3);
+
 
             Square square = new Square();
             Square square2 = new Square();
@@ -134,6 +139,17 @@ namespace Room_Simulation.Models
 
             Thread threadWaterBread = new Thread(NeedWaterBread);
             threadWaterBread.Start();
+
+
+
+            Supervision.Supervision.Clients = clients.Count;
+            Supervision.Supervision.ClientsGroups = clientGroups.Count;
+            foreach(Square sq in squares)
+            {
+                Supervision.Supervision.TablesUsed += sq.Tables.Count;
+            }
+            
+
 
             foreach (ClientGroup cg in clientGroups)
             {

@@ -152,6 +152,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,10 @@
     <ProjectReference Include="..\Kitchen_Simulation\Kitchen_Simulation.csproj">
       <Project>{65EC0AC1-0F53-476F-8AC2-F6B6E4CE7959}</Project>
       <Name>Kitchen_Simulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Supervision\Supervision.csproj">
+      <Project>{e5570d28-89cd-4795-8b78-8bf11eed1a0b}</Project>
+      <Name>Supervision</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

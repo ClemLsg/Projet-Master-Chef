@@ -12,8 +12,9 @@ namespace Room_Simulation.Models
 
         public ClientGroup ClientsGroup { get; set; }
         
-        public Table(int place)
+        public Table(int idtable, int place)
         {
+            this.IDTable = idtable;
             this.Seats = place;
             this.TableStatus = TableStatus.Free;
         }
